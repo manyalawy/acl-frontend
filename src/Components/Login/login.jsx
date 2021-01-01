@@ -48,9 +48,11 @@ const Login = () => {
       .then((response) => {
         if (response.data.error) {
           setsnackbarMsg(response.data.error);
+          setOpen(true);
           return;
         }
         if (response.data.token) {
+          localStorage.setItem("user", response.data.token);
           console.log(response.data.token);
         }
       })
