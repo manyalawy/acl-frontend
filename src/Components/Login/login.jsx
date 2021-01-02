@@ -57,7 +57,8 @@ const Login = () => {
         }
       })
       .catch((error) => {
-        console.log(error.response);
+        setsnackbarMsg("Error connecting to server");
+        setOpen(true);
       });
   };
 
