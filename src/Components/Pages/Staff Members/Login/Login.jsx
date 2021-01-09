@@ -53,7 +53,6 @@ const Login = () => {
         }
         if (response.data.token) {
           localStorage.setItem("user", response.data.token);
-          console.log(response.data.token);
         }
       })
       .catch((error) => {
