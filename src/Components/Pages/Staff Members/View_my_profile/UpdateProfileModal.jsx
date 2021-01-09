@@ -46,7 +46,6 @@ export default function UpdateProfileModal(props) {
       <DialogTitle id="form-dialog-title">Update profile</DialogTitle>
       <DialogContent>
         <TextField
-          autoFocus
           margin="dense"
           id="name"
           label="Email Address"
@@ -59,7 +58,6 @@ export default function UpdateProfileModal(props) {
         />
         {props.role === "HR" ? (
           <TextField
-            autoFocus
             margin="dense"
             id="salary"
             label="Salary"

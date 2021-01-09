@@ -43,7 +43,6 @@ const ViewMyProfile = () => {
           return;
         } else {
           const res = response.data;
-          console.log(res);
           setData({
             name: res.name,
             email: res.email,
