@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { useDispatch, useSelector } from 'react-redux'
+//import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router'
 
 
@@ -50,12 +50,13 @@ const vCov=()=>{}
 
   return (
     <div>
-      <text>
-        course coverage:
+      <text style={{marginTop:'3vw', marginLeft:'1vw', fontWeight:'bold', fontSize:'2vw'}}>
+        Course Coverage:
       </text>
-<text>
-  {vCov}
-</text>
+      
+   <text style={{marginTop:'3vw', marginLeft:'0.7vw', fontWeight:'bold', fontSize:'2vw', fontColor:'red'}}>
+   526
+   </text>
       
     </div>
   )

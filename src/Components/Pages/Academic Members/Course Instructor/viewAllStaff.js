@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import Form from 'react-bootstrap'
-import axios from 'axios'
-import { useDispatch, useSelector } from 'react-redux'
-import { useHistory } from 'react-router'
+// import Form from 'react-bootstrap'
+// import axios from 'axios'
+// import { useDispatch, useSelector } from 'react-redux'
+// import { useHistory } from 'react-router'
 
 
 export default function courseInstructorFP() {
@@ -50,7 +50,7 @@ export default function courseInstructorFP() {
 
   return (
     <div>
-      <Form>
+   {/* <Form>
         <Form.Group>
           <Form.Label>
             name:
@@ -63,7 +63,12 @@ export default function courseInstructorFP() {
 
       </Form>
 
-      
+   */}
+   <text style={{marginTop:'3vw', marginLeft:'1vw', fontWeight:'bold', fontSize:'2vw'}}>
+     Academic Members:</text> 
+     <text style={{marginTop:'3vw', marginLeft:'1vw', fontWeight:'bold', fontSize:'2vw'}}>
+       [ABC, OGH, MUF]
+     </text>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { useDispatch, useSelector } from 'react-redux'
-import { useHistory } from 'react-router'
+// import { useDispatch, useSelector } from 'react-redux'
+// import { useHistory } from 'react-router'
 
 
 export default function courseInstructorFP() {
@@ -49,7 +49,12 @@ export default function courseInstructorFP() {
 
   return (
     <div>
-
+    <text style={{marginTop:'3vw', marginLeft:'1vw', fontWeight:'bold', fontSize:'2vw'}}>
+      Slots : 
+    </text>
+    <text  style={{marginTop:'3vw', marginLeft:'0.5vw', fontWeight:'bold', fontSize:'2vw'}}>
+       [1st, 2nd, 5th]
+    </text>
       
     </div>
   )
