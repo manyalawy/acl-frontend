@@ -1,4 +1,3 @@
-  
 import React from "react";
 import ReactDOM from "react-dom";
 import Login from "./Components/Pages/Staff Members/Login/Login";
@@ -11,6 +10,8 @@ import courseInstructorFP from "./Components/Pages/Academic Members/Course Instr
 import viewSlotsAssignment from "./Components/Pages/Academic Members/Course Instructor/viewSlots";
 import viewCoverage from "./Components/Pages/Academic Members/Course Instructor/viewCoverage";
 import viewAllStaff from "./Components/Pages/Academic Members/Course Instructor/viewAllStaff";
+import CoursesListView from "./Components/List Views/coursesListView";
+import InstructorsListView from "./Components/List Views/InstructorsListViewPerCourse";
 
 ReactDOM.render(
   <Router>
@@ -20,7 +21,8 @@ ReactDOM.render(
     <Route path="/login/CI/viewCoverage" exact component={viewCoverage} />
     <Route path="/login/CI/viewSlotsAssignment" exact component={viewSlotsAssignment} />
     <Route path="/login/CI/viewAllStaff" exact component={viewAllStaff} />
-  
+    <Route path="/login/coursesListView" exact component={CoursesListView} />
+    <Route path="/login/InstructorsListView" exact component={InstructorsListView} />
   </Router>,
 
   document.getElementById("root")

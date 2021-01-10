@@ -1,10 +1,16 @@
 import React from 'react'
 import viewCoverage from './viewCoverage'
+import { useHistory } from 'react-router'
 
-export default function courseInstructorFP() {
-    // const ViewCov = () =>{
-    //     history('/login/CI/viewCoverage')
-    // }
+export default function CourseInstructorFP() {
+    const history = useHistory()
+    const ViewCov = () =>{
+        history.push("/login/CI/viewCoverage")
+    }
+    const viewSlots = () =>{
+        history.push("/login/CI/viewSlotsAssignment")
+    }
+    
   return (
     <div>
         <table>
@@ -17,11 +23,12 @@ export default function courseInstructorFP() {
 <div style={{marginTop:'4vw', marginLeft:'1vw'}}>
 <tr>
     <button style={{border:'none', backgroundColor:'gray', fontSize:'1vw',fontWeigt:'bold', marginRight:'1vw'}}
-    >
+    onClick={ViewCov}>
         View Coverage
     </button>
     
-    <button style={{border:'none', backgroundColor:'gray', fontSize:'1vw',fontWeigt:'bold', marginRight:'1vw', marginLeft:'0.8vw'}}>
+    <button style={{border:'none', backgroundColor:'gray', fontSize:'1vw',fontWeigt:'bold', marginRight:'1vw', marginLeft:'0.8vw'}}
+    onClick={viewSlots}>
         View Slots Assignment
     </button>
 </tr>
@@ -32,7 +39,7 @@ export default function courseInstructorFP() {
     </button>
 
 
-    <button style={{border:'none', backgroundColor:'gray', fontSize:'1vw',fontWeigt:'bold', marginRight:'1vw', marginLeft:'1.2vw'}}>
+   {/* <button style={{border:'none', backgroundColor:'gray', fontSize:'1vw',fontWeigt:'bold', marginRight:'1vw', marginLeft:'1.2vw'}}>
         Assign an Academic Member
     </button>
 
@@ -45,8 +52,8 @@ export default function courseInstructorFP() {
     </button>
     <button style={{border:'none', backgroundColor:'gray', fontSize:'1vw',fontWeigt:'bold', marginRight:'1vw'}}>
         Assign an academic <br></br>member to a CI
-    </button>
-    </tr>
+    </button>*/}
+  </tr>
 </div>
 </tr>
 </table>
