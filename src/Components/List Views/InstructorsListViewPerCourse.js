@@ -3,8 +3,10 @@ import Card from 'react-bootstrap/Card'
 import axios from 'axios'
 import { makeStyles } from '@material-ui/core/styles'
 import { useHistory } from 'react-router'
+import { Form } from "react-bootstrap"
+import Checkbox from '@material-ui/core/Checkbox'
 
-export default function CoursesListView (){
+export default function CoursesListView (props){
     const history = useHistory()
     const useStyles = makeStyles({
         card:{
@@ -46,10 +48,12 @@ export default function CoursesListView (){
         
     <div style={{ marginLeft:'1vw'}}>
            <div style={{marginTop:'1vw', marginLeft:'46vw'}}>
+             
             <button style={{backgroundColor:'black', border:'none', color:'white'}}>
                 Assign
-            </button>
+            </button> 
         </div>
+        
         <div style={{marginTop:'4vw', marginLeft:'52vw'}}>
             <button style={{backgroundColor:'black', border:'none', color:'white'}}>
              Delete
@@ -59,7 +63,9 @@ export default function CoursesListView (){
             Update
             </button>
         </div>
-        
+        <Form.Group>
+        <Form.Check>
+            <Checkbox/> 
              <Card style={{width:'50vw', height:'3vw'}}>
                  <tr>
                  <td>
@@ -68,33 +74,20 @@ export default function CoursesListView (){
         <td > &nbsp; &nbsp; &nbsp;I1 email</td>
         </tr>
         </Card>
+       
+        </Form.Check>
+        <Form.Check>
         <Card  style={{width:'50vw', height:'3vw', marginTop:'1vw'}}>
         2) I2 name 
         </Card>
-        <div style={{marginTop:'4vw', marginLeft:'52vw'}}>
-            <button style={{backgroundColor:'black', border:'none', color:'white'}}>
-             Delete
-            </button>
-            &nbsp;
-            <button style={{backgroundColor:'black', border:'none', color:'white'}}>
-            Update
-            </button>
-        </div>
-    
+        </Form.Check>
         <br></br>
-        
+        <Form.Check>
         <Card  style={{width:'50vw', height:'3vw', marginTop:'1vw'}}>
         3) I3 name
         </Card>
-        <div style={{marginTop:'4vw', marginLeft:'52vw'}}>
-            <button style={{backgroundColor:'black', border:'none', color:'white'}}>
-             Delete
-            </button>
-            &nbsp;
-            <button style={{backgroundColor:'black', border:'none', color:'white'}}>
-            Update
-            </button>
-        </div>
+        </Form.Check>
+        </Form.Group>
         
     </div>
     )
