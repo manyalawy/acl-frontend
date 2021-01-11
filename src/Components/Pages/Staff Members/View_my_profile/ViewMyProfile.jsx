@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
 import { Grid, Box, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "./UpdateProfileModal";
 import profilePic from "./Assets/profiePic.png";
+import React, { useState, useEffect } from "react";
 import jwt_decoded from "jwt-decode";
 const axios = require("axios").default;
 
@@ -31,7 +31,7 @@ const token = localStorage.getItem("user");
 const ViewMyProfile = () => {
   const decoded = jwt_decoded(token);
   const [data, setData] = useState("");
-  const [openModal, setOpenModal] = useState(false);
+  const [openModal, setOpenModal] = React.useState(false);
 
   useEffect(() => {
     axios
@@ -180,4 +180,5 @@ const ViewMyProfile = () => {
     </div>
   );
 };
+
 export default ViewMyProfile;
