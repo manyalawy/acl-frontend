@@ -5,6 +5,8 @@ import Button from "@material-ui/core/Button";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+
 import guc_logo from "./Assets/guc_logo.png";
 const axios = require("axios").default;
 function Alert(props) {
@@ -32,6 +34,7 @@ const Login = () => {
   const [snackbarMsg, setsnackbarMsg] = useState("");
   const [open, setOpen] = useState(false);
   const classes = useStyles();
+  const history = useHistory();
 
   const handleLogin = () => {
     if (email.length === 0 || password.length === 0) {
@@ -53,6 +56,7 @@ const Login = () => {
         }
         if (response.data.token) {
           localStorage.setItem("user", response.data.token);
+          history.push("/");
         }
       })
       .catch((error) => {
