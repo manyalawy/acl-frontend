@@ -7,6 +7,7 @@ import { Form } from "react-bootstrap"
 import Checkbox from '@material-ui/core/Checkbox'
 
 export default function InstructorsListViewPerCourse (props){
+    const [instructors, setInstructors] = useState('')
     const history = useHistory()
     const useStyles = makeStyles({
         card:{
@@ -22,7 +23,7 @@ export default function InstructorsListViewPerCourse (props){
     })
     useEffect(() => {
     axios({
-        url: 'localhost:8080/courseInstructor/viewAllStaff',
+        url: 'localhost:8080/headOfDepartment/viewStaffCourse ',
         method: 'POST',
         headers: {
           //token: token,
@@ -32,7 +33,8 @@ export default function InstructorsListViewPerCourse (props){
         },
       })
         .then((res) => {
-          console.log(res.data) 
+          console.log(res) 
+          setInstructors(res)
         })
         .catch((error) => {
           console.log(error)

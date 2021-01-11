@@ -9,15 +9,16 @@ import viewSlotsAssignment from "./Components/Pages/Academic Members/Course Inst
 import viewCoverage from "./Components/Pages/Academic Members/Course Instructor/viewCoverage";
 import viewAllStaff from "./Components/Pages/Academic Members/Course Instructor/viewAllStaff";
 import buttonsPage from "./Components/Pages/Academic Members/Course Instructor/buttonsPage";
-import CoursesListView from "./Components/List Views/coursesListView";
-import InstructorsListViewPerCourse from "./Components/List Views/InstructorsListViewPerCourse";
-import InstructorsListViewPerDep from "./Components/List Views/InstructorsListViewPerCourse";
+import CoursesListView from "./Components/List Views HOD/coursesListView";
+import InstructorsListViewPerCourse from "./Components/List Views HOD/InstructorsListViewPerCourse";
+import InstructorsListViewPerDep from "./Components/List Views HOD/InstructorsListViewPerCourse";
 import CINav from "./Components/NavBars/ciNav";
-import pageCall from "./Components/List Views/pageCall";
+import HODNav from "./Components/NavBars/hodNav";
+import pageCall from "./Components/List Views HOD/pageCall";
 
 ReactDOM.render(
   <Router>
-   <CINav/>
+   <HODNav/>
     <Route path="/login" exact component={Login} />
 
     <Route path="/login/CI/viewCoverage" exact component={viewCoverage} />

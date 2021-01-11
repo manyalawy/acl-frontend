@@ -5,6 +5,8 @@ import { makeStyles } from '@material-ui/core/styles'
 import { useHistory } from 'react-router'
 
 export default function CoursesListView (){
+  const [courses, setCourses] = useState('')
+  const course1 =['cs','abc','blablabla']
     const history = useHistory()
     const useStyles = makeStyles({
         card:{
@@ -15,23 +17,22 @@ export default function CoursesListView (){
             border:'none', 
             backgroundColor:'white', 
             textAlign:'left'
-        }
-        
+        }   
     })
     useEffect(() => {
     axios({
-        url: 'localhost:8080/headOfDepartment/ ',
+        url: 'localhost:8080//headOfDepartment/viewAllCourses',
         method: 'POST',
         headers: {
          // token: token,
         },
         data: {
-          course_name: "csen701",
-           id: "ac-1"
+          // course_name: "csen701",
         },
       })
         .then((res) => {
-          console.log(res.data) 
+          console.log(res) 
+          setCourses(res)
         })
         .catch((error) => {
           console.log(error)
@@ -46,26 +47,25 @@ export default function CoursesListView (){
     <div>
      
         <div  style={{fontSize:'1vw', marginTop:'3vw', marginLeft:'1vw'}}>
-        <button style={{border:'none', backgroundColor:'white', textAlign:'left'}}
-         onClick={theOnClick}>
-        <Card style={{width:'50vw', height:'3vw', marginTop:'1vw'}}>
-        1) cs 
-        </Card>
-        </button>
-        <button style={{border:'none', backgroundColor:'white', textAlign:'left', marginTop:'1vw'}}
-         onClick={theOnClick} >
-        <Card  style={{width:'50vw', height:'3vw', marginTop:'1vw'}}>
-        2) ff
-        </Card>
-        </button>
-        <br></br>
-        <button style={{border:'none', backgroundColor:'white', textAlign:'left'}}
-         onClick={theOnClick} >
-        <Card  style={{width:'50vw', height:'3vw', marginTop:'1vw'}}>
-        3) gg
-        </Card>
-        </button>
-        </div>
+        {course1.map((element,index) => {
+            return(
+        <table style={{marginTop:'1vw'}}>
+        <tr> 
+            <td>
+              <button onClick={theOnClick}>
+             <Card style={{width:'50vw', height:'3vw'}}>
+              <tr>
+                 <td> {/*instructors[1][1]*/} peewwww </td>
+                 <td> &nbsp; &nbsp; &nbsp; pewwwww </td>
+              </tr>
+             </Card>
+             </button>
+           </td>
+        </tr>
+        </table>
+         )
+       })}
+       </div>
     </div>
     )
 }
