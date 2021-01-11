@@ -1,74 +1,62 @@
-import React, { useState, useEffect } from 'react'
-// import Form from 'react-bootstrap'
-// import axios from 'axios'
-// import { useDispatch, useSelector } from 'react-redux'
-// import { useHistory } from 'react-router'
+import React, { useState, useEffect } from "react"
+import Card from 'react-bootstrap/Card'
+import axios from 'axios'
+import { makeStyles } from '@material-ui/core/styles'
+import { useHistory } from 'react-router'
+import Checkbox from '@material-ui/core/Checkbox'
 
+export default function ViewAllStaff (props){
 
-export default function courseInstructorFP() {
+    const history = useHistory()
+    const [instructors, setInstructors] = useState('')
+    const instructors1=['tadaaaa','nannanana','loodfff']
 
-  //const id = useSelector((state) => state.id)
+    useEffect(() => {
+    axios({
+        url: 'localhost:8080/courseInstructor/viewAllStaff',
+        method: 'POST',
+        headers: {
+          //token: token,
+        },
+        data: {
+          course_name: "csen701"
+        },
+      })
+        .then((res) => {
+          console.log(res) 
+          setInstructors(res)
+        })
+        .catch((error) => {
+          console.log(error)
+        })   
+    });
+    const cardClick = () =>{
+      history.push('/login/CI/buttonsPage')
+    }
 
-  //const dispatch = useDispatch()
-  //const history = useHistory()
-  //const [validated, setValidated] = useState(false)
+   
+    return(
+        
+    <div style={{ marginLeft:'1vw'}}>
+        {instructors1.map((element,index) => {
+            return(
+        <table style={{marginTop:'1vw'}}>
+        <tr> 
+            <td>
+              <button onClick={cardClick}>
+             <Card style={{width:'50vw', height:'3vw'}}>
+              <tr>
+                 <td> {/*instructors[1][1]*/} peewwww </td>
+                 <td> &nbsp; &nbsp; &nbsp; pewwwww </td>
+              </tr>
+             </Card>
+             </button>
+           </td>
+        </tr>
+        </table>
+         )
+       })}
 
-//   useEffect(() => {
-//     // if (!dispatch(checkTokenExpired(history))) {
-//     axios({
-//       url: ,
-//       method: 'POST',
-//       headers: {
-//         authorization: token,
-//       },
-//       data: {
-//         Account: {
-//           id,
-//         },
-//         accountId,
-//       },
-//     })
-//       .then((res) => {
-//         console.log(res)
-//         if (res.data.statusCode === 0) {
-//           setExistingCourses(res.data.AllCourses)
-//           let y = []
-//           y.length = res.data.AllCourses.length
-//           console.log(y)
-//           res.data.AllCourses.map((element, index) => {
-//             y[index] = false
-//           })
-//           setOpenCourse(y)
-//           setLoading(false)
-//         }
-//       })
-//       .catch((error) => {
-//         console.log(error)
-//       })
-//     // }
-//   }, [])
-
-  return (
-    <div>
-   {/* <Form>
-        <Form.Group>
-          <Form.Label>
-            name:
-          </Form.Label>
-          <Form.Control
-          placeholder={}>
-
-          </Form.Control>
-        </Form.Group>
-
-      </Form>
-
-   */}
-   <text style={{marginTop:'3vw', marginLeft:'1vw', fontWeight:'bold', fontSize:'2vw'}}>
-     Academic Members:</text> 
-     <text style={{marginTop:'3vw', marginLeft:'1vw', fontWeight:'bold', fontSize:'2vw'}}>
-       [ABC, OGH, MUF]
-     </text>
     </div>
-  )
+    )
 }

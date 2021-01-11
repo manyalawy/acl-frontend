@@ -1,63 +1,43 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 //import { useDispatch, useSelector } from 'react-redux'
-import { useHistory } from 'react-router'
+//import { useHistory } from 'react-router'
 
-
-export default function viewCoverage() {
-
+export default function ViewCoverage() {
   //const id = useSelector((state) => state.id)
-
   //const dispatch = useDispatch()
   //const history = useHistory()
-  //const [validated, setValidated] = useState(false)
+  const [coverage, setCoverage] = useState('')
 
-//   useEffect(() => {
-//     // if (!dispatch(checkTokenExpired(history))) {
-//     axios({
-//       url: ,
-//       method: 'POST',
-//       headers: {
-//         authorization: token,
-//       },
-//       data: {
-//         Account: {
-//           id,
-//         },
-//         accountId,
-//       },
-//     })
-//       .then((res) => {
-//         console.log(res)
-//         if (res.data.statusCode === 0) {
-//           setExistingCourses(res.data.AllCourses)
-//           let y = []
-//           y.length = res.data.AllCourses.length
-//           console.log(y)
-//           res.data.AllCourses.map((element, index) => {
-//             y[index] = false
-//           })
-//           setOpenCourse(y)
-//           setLoading(false)
-//         }
-//       })
-//       .catch((error) => {
-//         console.log(error)
-//       })
-//     // }
-//   }, [])
-//const vCov=()=>{}
+  useEffect(() => {
+    axios({
+      url:'localhost:8080/courseInstructor/viewCourseCoverage ' ,
+      method: 'POST',
+      headers: {
+       // token: token,
+      },
+      data: {
+        academicMemberID:"ac44", 
+        status:"assigned" 
+      },
+    })
+      .then((res) => {
+        console.log(res)
+        setCoverage(res)
+      })
+      .catch((error) => {
+        console.log(error)    
+      }) 
+  }, [])
 
   return (
     <div>
       <text style={{marginTop:'3vw', marginLeft:'1vw', fontWeight:'bold', fontSize:'2vw'}}>
         Course Coverage:
-      </text>
-      
+      </text> 
    <text style={{marginTop:'3vw', marginLeft:'0.7vw', fontWeight:'bold', fontSize:'2vw', fontColor:'red'}}>
-   526
-   </text>
-      
+   {coverage}
+   </text> 
     </div>
   )
 }
