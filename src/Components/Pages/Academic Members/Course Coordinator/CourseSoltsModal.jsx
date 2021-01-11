@@ -8,7 +8,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import axios from "axios";
 const token = localStorage.getItem("user");
 
-const CourseSoltsModal = (props) => {
+export const CourseSoltsModal = (props) => {
   const [location, setlocation] = useState("");
   const [weekday, setweekday] = useState("");
   const [slotNumber, setslotNumber] = useState("");
