@@ -21,6 +21,18 @@ const CINav = () => {
       <Navbar.Collapse id="responsive-navbar-nav">
 
         <Nav className="mr-auto">
+
+        <NavDropdown title="Profile" id="collasible-nav-dropdown">
+            <NavDropdown.Item href="#action/3.1">View profile</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.2">
+              Update profile
+            </NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Attendance</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">
+              Reset password
+            </NavDropdown.Item>
+    
+          </NavDropdown>
            <Nav.Link href="#features"
            onClick={ViewCov}>View Courses Coverage</Nav.Link>
            <Nav.Link href="#features"

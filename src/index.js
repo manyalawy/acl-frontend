@@ -14,7 +14,13 @@ import InstructorsListViewPerCourse from "./Components/List Views HOD/Instructor
 import InstructorsListViewPerDep from "./Components/List Views HOD/InstructorsListViewPerCourse";
 import CINav from "./Components/NavBars/ciNav";
 import HODNav from "./Components/NavBars/hodNav";
-import pageCall from "./Components/List Views HOD/pageCall";
+import  ButtonsPageHod from "./Components/List Views HOD/buttonsPageHod";
+import viewAllReq from './Components/Pages/Academic Members/HOD/viewAllReq'
+import viewTeachingAssignments from './Components/Pages/Academic Members/HOD/viewTeachingAssignments'
+import ViewDayOffAll from "./Components/Pages/Academic Members/HOD/viewDayOffAll";
+import ViewDayOffX from "./Components/Pages/Academic Members/HOD/viewDayOffX";
+import acceptRejectReq from "./Components/Pages/Academic Members/HOD/acceptRejectReq";
+import ViewCoverageHOD from "./Components/Pages/Academic Members/HOD/viewCoverageHOD";
 
 ReactDOM.render(
   <Router>
@@ -27,9 +33,15 @@ ReactDOM.render(
     <Route path="/login/CI/buttonsPage" exact component={buttonsPage} />
 
     <Route path="/login/coursesListView" exact component={CoursesListView} />
-    <Route path="/login/pageCall" exact component={pageCall} />
-    <Route path="/login/InstructorsListViewPerCourse" exact component={InstructorsListViewPerCourse} />
-    <Route path="/login/InstructorsListViewPerDep" exact component={InstructorsListViewPerDep} />
+    <Route path="/buttonsPageHod" exact component={ButtonsPageHod} />
+    <Route path="/viewStaffPerCourse" exact component={InstructorsListViewPerCourse} />
+    <Route path="/viewStaffPerDep" exact component={InstructorsListViewPerDep} />
+    <Route path="/viewAllReq" exact component={viewAllReq} />
+    <Route path="/viewTeachingAssignments" exact component={viewTeachingAssignments} />
+    <Route path="/viewDayOffAll" exact component={ViewDayOffAll} />
+    <Route path="/viewDayOffX" exact component={ViewDayOffX} />
+    <Route path="/acceptReject" exact component={acceptRejectReq} />
+    <Route path="/viewCoverageHOD" exact component={ViewCoverageHOD} />
   </Router>,
 
   document.getElementById("root")

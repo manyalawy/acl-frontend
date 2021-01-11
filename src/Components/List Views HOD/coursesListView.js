@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { useHistory } from 'react-router'
 
 export default function CoursesListView (){
+  const token = localStorage.getItem("user");
   const [courses, setCourses] = useState('')
   const course1 =['cs','abc','blablabla']
     const history = useHistory()
@@ -21,10 +22,10 @@ export default function CoursesListView (){
     })
     useEffect(() => {
     axios({
-        url: 'localhost:8080//headOfDepartment/viewAllCourses',
+        url: 'localhost:8080/headOfDepartment/viewAllCourses',
         method: 'POST',
         headers: {
-         // token: token,
+         token: token,
         },
         data: {
           // course_name: "csen701",
@@ -32,7 +33,7 @@ export default function CoursesListView (){
       })
         .then((res) => {
           console.log(res) 
-          setCourses(res)
+          setCourses(res.data)
         })
         .catch((error) => {
           console.log(error)

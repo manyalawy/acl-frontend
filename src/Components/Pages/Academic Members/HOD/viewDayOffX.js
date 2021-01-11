@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react"
 import axios from 'axios'
-
-export default function ViewTeachingAssigments() {
-  const [teachingAssignments, setTeachingAssignments]= useState('')
+export default function ViewDayOffX() {
+  const [dayOffX, setDayOffX]= useState('')
   const token = localStorage.getItem("user");
   useEffect(() => {  
         axios({
-          url: 'localhost:8080/headOfDepartment/viewAssignments',
+          url: 'localhost:8080/headOfDepartment/viewDayOffX',
           method: 'POST',
           headers: {
             token: token,
@@ -17,7 +16,7 @@ export default function ViewTeachingAssigments() {
         })
           .then((res) => {
             console.log(res) 
-            setTeachingAssignments(res)
+            setDayOffX(res)
           })
           .catch((error) => {
             console.log(error)
@@ -26,23 +25,12 @@ export default function ViewTeachingAssigments() {
 
   return (
     <div>
-        <div>
     <text style={{marginTop:'3vw', marginLeft:'1vw', fontWeight:'bold', fontSize:'2vw'}}>
-     Staff Member:
+      Day Off:
     </text> 
  <text style={{marginTop:'3vw', marginLeft:'0.7vw', fontWeight:'bold', fontSize:'2vw', fontColor:'red'}}>
-{teachingAssignments.id}
- </text>
- </div>
-
-         <div style={{marginTo:'6vw'}}>
-    <text style={{ marginLeft:'1vw', fontWeight:'bold', fontSize:'2vw'}}>
-     Assigned Slots :
-    </text> 
- <text style={{marginTop:'3vw', marginLeft:'0.7vw', fontWeight:'bold', fontSize:'2vw', fontColor:'red'}}>
-{teachingAssignments.slots}
- </text>
- </div>  
+ {dayOffX}
+ </text> 
   </div>
   )
 }

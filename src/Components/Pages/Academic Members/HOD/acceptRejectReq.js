@@ -1,14 +1,60 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import axios from 'axios'
 
-export default function HODfp() {
-  return (
-    <div>
-        <h style={{fontWeight:'bold', fontColor:'black'}}>
-         HOD
+export default function AcceptRejectReq(){
+    const token = localStorage.getItem("user");
 
-        </h>
+    const acceptReq = () =>{
+        axios({
+          url: 'localhost:8080 /headOfDepartment/acceptRequest ',
+          method: 'POST',
+          headers: {
+            token: token,
+          },
+          data: {
+            id: "5fe5e4c0750d936ee4b3e4c1",
+          },
+        })
+          .then((res) => {
+            console.log(res) 
+          })
+          .catch((error) => {
+            console.log(error)
+          })   
+      }
 
-      
-    </div>
-  )
+      const rejectReq = () =>{
+        axios({
+          url: 'localhost:8080/headOfDepartment/rejectRequest',
+          method: 'POST',
+          headers: {
+            token: token,
+          },
+          data: {
+            id: "5fe5e4c0750d936ee4b3e4c1",
+            reject_reason: "because" 
+          },
+        })
+          .then((res) => {
+            console.log(res) 
+          })
+          .catch((error) => {
+            console.log(error)
+          })   
+      }
+    return(
+ 
+         <div style={{marginTop:'5vw', marginLeft:'52vw'}}>
+             <button style={{backgroundColor:'black', border:'none', color:'white'}}
+             onClick={acceptReq}>
+              Accept
+             </button>
+             &nbsp;
+             <button style={{backgroundColor:'black', border:'none', color:'white'}}
+             onClick={rejectReq}>
+             Reject
+             </button>
+         </div>
+       
+    )
 }

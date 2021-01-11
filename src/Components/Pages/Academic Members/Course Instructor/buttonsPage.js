@@ -2,13 +2,13 @@ import React from 'react'
 import axios from 'axios'
 
 export default function ButtonsPage(){
-
+  const token = localStorage.getItem("user");
     const assignToSlot= () =>{
         axios({
           url: 'localhost:8080/courseInstructor/assignInstructorToSlot ',
           method: 'POST',
           headers: {
-            //token: token,
+            token: token,
           },
           data: {
             id: "ac4", 
@@ -28,7 +28,7 @@ export default function ButtonsPage(){
           url: 'localhost:8080/courseInstructor/academicMemberToCourseCoordinator',
           method: 'POST',
           headers: {
-            //token: token,
+            token: token,
           },
           data: {
             id: "ac-4", 
@@ -47,7 +47,7 @@ export default function ButtonsPage(){
           url: 'localhost:8080/courseInstructor/updateAnAssignment',
           method: 'POST',
           headers: {
-            //token: token,
+            token: token,
           },
           data: {
              id: "ac4",
@@ -67,7 +67,7 @@ export default function ButtonsPage(){
           url: 'localhost:8080/courseInstructor/removeAnAssignedMember',
           method: 'POST',
           headers: {
-            //token: token,
+            token: token,
           },
           data: {
             id: "abc", 

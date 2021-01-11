@@ -8,6 +8,7 @@ export default function ViewSlots() {
   // const dispatch = useDispatch()
   // const history = useHistory()
   const [slots, setSlots] = useState('')
+  const token = localStorage.getItem("user");
 
   useEffect(() => {
     // if (!dispatch(checkTokenExpired(history))) {
@@ -15,7 +16,7 @@ export default function ViewSlots() {
       url:'localhost:8080/courseInstructor/viewSlotsAssignment' ,
       method: 'POST',
       headers: {
-       // token: token,
+       token: token,
       },
       data: {
         id:"ac4" 

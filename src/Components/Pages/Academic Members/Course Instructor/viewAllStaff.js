@@ -6,7 +6,7 @@ import { useHistory } from 'react-router'
 import Checkbox from '@material-ui/core/Checkbox'
 
 export default function ViewAllStaff (props){
-
+  const token = localStorage.getItem("user");
     const history = useHistory()
     const [instructors, setInstructors] = useState('')
     const instructors1=['tadaaaa','nannanana','loodfff']
@@ -16,7 +16,7 @@ export default function ViewAllStaff (props){
         url: 'localhost:8080/courseInstructor/viewAllStaff',
         method: 'POST',
         headers: {
-          //token: token,
+          token: token,
         },
         data: {
           course_name: "csen701"

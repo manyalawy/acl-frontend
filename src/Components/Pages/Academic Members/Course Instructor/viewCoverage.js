@@ -7,6 +7,7 @@ export default function ViewCoverage() {
   //const id = useSelector((state) => state.id)
   //const dispatch = useDispatch()
   //const history = useHistory()
+  const token = localStorage.getItem("user");
   const [coverage, setCoverage] = useState('')
 
   useEffect(() => {
@@ -14,7 +15,7 @@ export default function ViewCoverage() {
       url:'localhost:8080/courseInstructor/viewCourseCoverage ' ,
       method: 'POST',
       headers: {
-       // token: token,
+        token: token,
       },
       data: {
         academicMemberID:"ac44", 
