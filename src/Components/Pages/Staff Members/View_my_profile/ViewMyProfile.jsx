@@ -6,6 +6,7 @@ import React, { useState, useEffect } from "react";
 import jwt_decoded from "jwt-decode";
 const axios = require("axios").default;
 
+
 const useStyles = makeStyles((theme) => ({
   image: {
     height: 400,
@@ -32,6 +33,7 @@ const ViewMyProfile = () => {
   const decoded = jwt_decoded(token);
   const [data, setData] = useState("");
   const [openModal, setOpenModal] = React.useState(false);
+
 
   useEffect(() => {
     axios
