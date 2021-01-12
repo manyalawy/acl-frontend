@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import Card from 'react-bootstrap/Card'
 //import { useDispatch, useSelector } from 'react-redux'
 //import { useHistory } from 'react-router'
 
@@ -32,12 +33,20 @@ export default function ViewCoverageHOD() {
 
   return (
     <div>
-      <text style={{marginTop:'3vw', marginLeft:'1vw', fontWeight:'bold', fontSize:'2vw'}}>
+      <Card style={{width:'13vw', height:'3vw', borderWidth:'0.2vw', borderColor:'#a9a9a9'}}>
+        <tr>
+          <td>
+      <text style={{marginTop:'3vw', marginLeft:'1vw', fontWeight:'bold', fontSize:'1vw'}}>
         Course Coverage:
       </text> 
-   <text style={{marginTop:'3vw', marginLeft:'0.7vw', fontWeight:'bold', fontSize:'2vw', fontColor:'red'}}>
-   {coverage}
+      </td>
+      <td>
+   <text style={{marginTop:'3vw', marginLeft:'0.7vw', fontSize:'1vw', fontColor:'red'}}>
+   {coverage} 29
    </text> 
+   </td>
+   </tr>
+   </Card>
     </div>
   )
 }

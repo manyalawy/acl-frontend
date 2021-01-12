@@ -10,7 +10,7 @@ import viewCoverage from "./Components/Pages/Academic Members/Course Instructor/
 import viewAllStaff from "./Components/Pages/Academic Members/Course Instructor/viewAllStaff";
 import buttonsPage from "./Components/Pages/Academic Members/Course Instructor/buttonsPage";
 import CoursesListView from "./Components/List Views HOD/coursesListView";
-import InstructorsListViewPerCourse from "./Components/List Views HOD/InstructorsListViewPerCourse";
+
 import InstructorsListViewPerDep from "./Components/List Views HOD/InstructorsListViewPerCourse";
 import CINav from "./Components/NavBars/ciNav";
 import HODNav from "./Components/NavBars/hodNav";
@@ -22,6 +22,7 @@ import ViewDayOffX from "./Components/Pages/Academic Members/HOD/viewDayOffX";
 import acceptRejectReq from "./Components/Pages/Academic Members/HOD/acceptRejectReq";
 import ViewCoverageHOD from "./Components/Pages/Academic Members/HOD/viewCoverageHOD";
 import ViewAttendanceRecord from './Components/Pages/HR Members/viewAttendanceRecord'
+import InstructorsListViewPerCourse from './Components/List Views HOD/InstructorsListViewPerCourse'
 
 ReactDOM.render(
   <Router>
@@ -33,9 +34,9 @@ ReactDOM.render(
     <Route path="/login/CI/viewAllStaff" exact component={viewAllStaff} />
     <Route path="/login/CI/buttonsPage" exact component={buttonsPage} />
 
-    <Route path="/login/coursesListView" exact component={CoursesListView} />
+    <Route path="/coursesListView" exact component={CoursesListView} />
     <Route path="/buttonsPageHod" exact component={ButtonsPageHod} />
-    <Route path="/viewStaffPerCourse" exact component={InstructorsListViewPerCourse} />
+  
     <Route path="/viewStaffPerDep" exact component={InstructorsListViewPerDep} />
     <Route path="/viewAllReq" exact component={viewAllReq} />
     <Route path="/viewTeachingAssignments" exact component={viewTeachingAssignments} />
@@ -45,6 +46,7 @@ ReactDOM.render(
     <Route path="/viewCoverageHOD" exact component={ViewCoverageHOD} />
 
     <Route path="/viewAttendanceRecord" exact component={ViewAttendanceRecord} />
+    <Route path="/InstructorsListViewPerCourse" exact component={InstructorsListViewPerCourse} />
   </Router>,
 
   document.getElementById("root")

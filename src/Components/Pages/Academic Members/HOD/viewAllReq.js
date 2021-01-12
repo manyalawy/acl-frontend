@@ -6,7 +6,7 @@ import {useHistory} from 'react-router'
 export default function ViewAllReq() {
   const [requests, setRequests]= useState('')
   const history = useHistory()
-  const requests1 =['req 1', 'req 2']
+  const requests1 =['Sick Leave', 'Maternity Leave']
   const token = localStorage.getItem("user");
   const nav = () =>{
     history.push('/acceptReject')
@@ -31,30 +31,42 @@ export default function ViewAllReq() {
           }) 
     });
 
-  return (
-    <div>
-     
-     {requests1.map((element,index) => {
-            return(
-        <table style={{marginTop:'1vw'}}>
-        <tr>  
-            <td>
-                <button
-                onClick={nav}>
-             <Card style={{width:'50vw', height:'3vw'}}>
-                 <tr>
-                 <td>
-               {requests1[index]}
-        </td>
-        <td > &nbsp; &nbsp; &nbsp;{requests1[index]}</td>
-        </tr>
-        </Card>
-        </button>
-        </td>
-        </tr>
-        </table>
-    )
-     })}
-  </div>
-  )
+    return(
+      <div style={{ marginTop:'2vw'}}>
+         <h style={{fontWeight:'bold', marginLeft:'40vw', fontSize:'1.5vw'}}>
+        
+          Requests
+       
+        </h>
+       
+          <div  style={{fontSize:'1vw', marginTop:'3vw', marginLeft:'1vw', marginBottom:'3vw'}}>
+          {requests1.map((element,index) => {
+              return(
+          <table style={{marginTop:'1vw'}}>
+          <tr> 
+              <td>
+                <button onClick={nav} 
+                style={{border:'black', backgroundColor:'white'}}>
+               <Card style={{width:'50vw', height:'3vw', borderWidth:'0.2vw', borderColor:'#a9a9a9'}}>
+                <tr>
+                   <td>
+                     <text style={{marginLeft:'2vw', fontWeight:'bold', fontSize:'1vw'}}> {index+1} </text></td>
+                   <td> &nbsp; &nbsp; &nbsp;<text style={{fontSize:'1vw',color:'#8b0000 '}}> {requests1[index]} </text> </td>
+                </tr>
+               </Card>
+               </button>
+             </td>
+          </tr>
+          </table>
+           )
+         })}
+         </div>
+         <text style={{marginLeft:'1.5vw', fontWeight:'bold', color:'#8b0000'}}>
+          Note: 
+         </text>
+         <text style={{marginLeft:'0.5vw', fontWeight:'bold'}}>
+           To Accept/Reject a request, please click on the request.
+         </text>
+      </div>
+      )
 }
