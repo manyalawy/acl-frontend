@@ -25,11 +25,11 @@ export default function ViewDayOffX() {
 
   return (
     <div>
-    <text style={{marginTop:'3vw', marginLeft:'1vw', fontWeight:'bold', fontSize:'2vw'}}>
+    <text style={{marginTop:'3vw', marginLeft:'1vw', fontWeight:'bold', fontSize:'1vw'}}>
       Day Off:
     </text> 
- <text style={{marginTop:'3vw', marginLeft:'0.7vw', fontWeight:'bold', fontSize:'2vw', fontColor:'red'}}>
- {dayOffX}
+ <text style={{marginTop:'3vw', marginLeft:'0.1vw',  fontSize:'1vw', color:'red'}}>
+ {dayOffX} Tuesday
  </text> 
   </div>
   )

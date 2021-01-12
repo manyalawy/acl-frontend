@@ -6,7 +6,7 @@ import {useHistory} from 'react-router'
 const HODNav = () => {
   const history = useHistory()
   const viewDep = () =>{
-    history.push('/viewStaffPerDep')
+    history.push('/InstructorsListViewPerDep')
   }
   const viewRequests= () =>{
     history.push('/viewAllReq')
@@ -16,6 +16,9 @@ const HODNav = () => {
   }
   const viewCourses= () =>{
     history.push('/coursesListView')
+  }
+  const viewDayOff = () =>{
+    history.push('/viewDayOffAll')
   }
 
  
@@ -42,6 +45,9 @@ const HODNav = () => {
             </NavDropdown.Item>
             <NavDropdown.Item
             onClick={viewDep}>View Staff Per Department</NavDropdown.Item>
+              <NavDropdown.Item
+            onClick={viewDayOff}>View Day Off All
+            </NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Requests" id="collasible-nav-dropdown">
             <NavDropdown.Item 

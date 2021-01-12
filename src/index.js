@@ -11,7 +11,7 @@ import viewAllStaff from "./Components/Pages/Academic Members/Course Instructor/
 import buttonsPage from "./Components/Pages/Academic Members/Course Instructor/buttonsPage";
 import CoursesListView from "./Components/List Views HOD/coursesListView";
 
-import InstructorsListViewPerDep from "./Components/List Views HOD/InstructorsListViewPerCourse";
+import InstructorsListViewPerDep from "./Components/List Views HOD/InstructorsListViewPerDep";
 import CINav from "./Components/NavBars/ciNav";
 import HODNav from "./Components/NavBars/hodNav";
 import  ButtonsPageHod from "./Components/List Views HOD/buttonsPageHod";
@@ -23,6 +23,7 @@ import acceptRejectReq from "./Components/Pages/Academic Members/HOD/acceptRejec
 import ViewCoverageHOD from "./Components/Pages/Academic Members/HOD/viewCoverageHOD";
 import ViewAttendanceRecord from './Components/Pages/HR Members/viewAttendanceRecord'
 import InstructorsListViewPerCourse from './Components/List Views HOD/InstructorsListViewPerCourse'
+import ButtonsPageHod2 from "./Components/List Views HOD/buttonsPageHOD2";
 
 ReactDOM.render(
   <Router>
@@ -37,7 +38,7 @@ ReactDOM.render(
     <Route path="/coursesListView" exact component={CoursesListView} />
     <Route path="/buttonsPageHod" exact component={ButtonsPageHod} />
   
-    <Route path="/viewStaffPerDep" exact component={InstructorsListViewPerDep} />
+    <Route path="/InstructorsListViewPerDep" exact component={InstructorsListViewPerDep} />
     <Route path="/viewAllReq" exact component={viewAllReq} />
     <Route path="/viewTeachingAssignments" exact component={viewTeachingAssignments} />
     <Route path="/viewDayOffAll" exact component={ViewDayOffAll} />
@@ -47,6 +48,7 @@ ReactDOM.render(
 
     <Route path="/viewAttendanceRecord" exact component={ViewAttendanceRecord} />
     <Route path="/InstructorsListViewPerCourse" exact component={InstructorsListViewPerCourse} />
+    <Route path="/buttonsPageHod2" exact component={ButtonsPageHod2} />
   </Router>,
 
   document.getElementById("root")

@@ -49,7 +49,7 @@ export default function ViewTeachingAssigments() {
      Staff Member:
     </text> 
     <text style={{marginTop:'3vw', marginLeft:'0.7vw',  fontSize:'1vw', fontColor:'red'}}>
-    {teachingAssignments1[index][index]}
+    {teachingAssignments1[index]}
     </text>
     </td>
  
@@ -59,7 +59,7 @@ export default function ViewTeachingAssigments() {
      Assigned Slots :
     </text> 
     <text style={{marginTop:'3vw', marginLeft:'0.7vw', fontSize:'1vw', fontColor:'red'}}>
-    {teachingAssignments1[index][index+1]}
+    {teachingAssignments1[index]}
     </text>
     </td>
     </tr>

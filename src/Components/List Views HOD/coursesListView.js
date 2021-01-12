@@ -15,7 +15,7 @@ export default function CoursesListView (){
         method: 'POST',
         headers: {
          token: token,
-        },
+        }, 
       })
         .then((res) => {
           console.log(res) 
