@@ -20,7 +20,46 @@ const HODNav = () => {
   const viewDayOff = () =>{
     history.push('/viewDayOffAll')
   }
+  const compensationLeave = () =>{
+    history.push('/compensationLeave')
+  }
+  const annualLeave = () =>{
+    history.push('/annualLeave')
+  }
+  const maternityLeave = () =>{
+    history.push('/maternityLeave')
+  }
+  const sickLeave = () =>{
+    history.push('/sickLeave')
+  }
+  const accidentialLeave = () =>{
+    history.push('/accidentialLeave')
+  }
+  const viewAll = () =>{
+    history.push('/viewAll')
+  }
+  const viewAccepted = () =>{
+    history.push('/viewAccepted')
+  }
+  const viewPending = () =>{
+    history.push('/viewPending')
+  }
+  const viewRejected = () =>{
+    history.push('/viewRejected')
+  }
 
+  const viewSchedule = () =>{
+    history.push('/viewSchedule')
+  }
+  const changeDayOff = () =>{
+    history.push('/changeDayOff')
+  }
+  const replacementReq = () =>{
+    history.push('/replacementReq')
+  }
+  const slotLinkingReq = () =>{
+    history.push('/slotLinkingReq')
+  }
  
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -66,47 +105,58 @@ const HODNav = () => {
               View All Requests
             </NavDropdown.Item>
             <NavDropdown.Item 
-            >
+            onClick={replacementReq}>
               Replacement Requests
             </NavDropdown.Item>
-            <NavDropdown.Item>
+            <NavDropdown.Item
+            onClick={slotLinkingReq}>
               Slot Linking Requests
             </NavDropdown.Item>
-            <NavDropdown.Item>
+            <NavDropdown.Item
+            onClick={changeDayOff}>
             Change Day Off
             </NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Leave System" id="collasible-nav-dropdown">
             <NavDropdown.Item 
-            >
+            onClick={annualLeave}>
              Annual Leave
             </NavDropdown.Item>
             <NavDropdown.Item
-          >Accidential Leave</NavDropdown.Item>
-              <NavDropdown.Item
-            >Sick Leave
+            onClick={compensationLeave}>
+             Compensation Leave
             </NavDropdown.Item>
             <NavDropdown.Item
-            >Maternity Leave
+         onClick={accidentialLeave} >Accidential Leave</NavDropdown.Item>
+              <NavDropdown.Item
+            onClick={sickLeave}>Sick Leave
+            </NavDropdown.Item>
+            <NavDropdown.Item
+            onClick={maternityLeave}>Maternity Leave
             </NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Requests Status" id="collasible-nav-dropdown">
-            <NavDropdown.Item>
+            <NavDropdown.Item
+            onClick={viewAll}>
               View All 
             </NavDropdown.Item>
-            <NavDropdown.Item>
+            <NavDropdown.Item
+            onClick={viewAccepted}>
               View Accepted Requests
             </NavDropdown.Item>
-            <NavDropdown.Item>
+            <NavDropdown.Item
+            onClick={viewPending}>
               View Pending Requests
             </NavDropdown.Item>
-            <NavDropdown.Item>
+            <NavDropdown.Item
+            onClick={viewRejected}>
               View Rejected Requests
             </NavDropdown.Item>
           </NavDropdown>
          
       
-          <Nav.Link >View schedule</Nav.Link>
+          <Nav.Link
+          onClick={viewSchedule} >View schedule</Nav.Link>
         </Nav>
         <Nav>
           <Nav.Link >

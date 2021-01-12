@@ -10,7 +10,6 @@ import viewCoverage from "./Components/Pages/Academic Members/Course Instructor/
 import viewAllStaff from "./Components/Pages/Academic Members/Course Instructor/viewAllStaff";
 import buttonsPage from "./Components/Pages/Academic Members/Course Instructor/buttonsPage";
 import CoursesListView from "./Components/List Views HOD/coursesListView";
-
 import InstructorsListViewPerDep from "./Components/List Views HOD/InstructorsListViewPerDep";
 import CINav from "./Components/NavBars/ciNav";
 import HODNav from "./Components/NavBars/hodNav";
@@ -25,7 +24,19 @@ import ViewAttendanceRecord from './Components/Pages/HR Members/viewAttendanceRe
 import InstructorsListViewPerCourse from './Components/List Views HOD/InstructorsListViewPerCourse'
 import ButtonsPageHod2 from "./Components/List Views HOD/buttonsPageHOD2";
 import coursesCI from "./Components/Pages/Academic Members/Course Instructor/coursesCI";
-
+import CompensationLeave from './Components/Pages/Academic Members/Academic Member/Leave System/CompensationLeave'
+import AccidentialLeave from './Components/Pages/Academic Members/Academic Member/Leave System/AccidentialLeave'
+import AnnualLeave from './Components/Pages/Academic Members/Academic Member/Leave System/AnnualLeave'
+import MaternityLeave from './Components/Pages/Academic Members/Academic Member/Leave System/MaternityLeave'
+import SickLeave from './Components/Pages/Academic Members/Academic Member/Leave System/SickLeave'
+import viewAll from './Components/Pages/Academic Members/Academic Member/Requests Status/ViewAll'
+import viewAccepted from './Components/Pages/Academic Members/Academic Member/Requests Status/ViewAccepted'
+import ViewPending from './Components/Pages/Academic Members/Academic Member/Requests Status/ViewPending'
+import viewRejected from './Components/Pages/Academic Members/Academic Member/Requests Status/ViewRejected'
+import ViewSchedule from "./Components/Pages/Academic Members/Academic Member/ViewSchedule";
+import replacementReq from "./Components/Pages/Academic Members/Academic Member/ReplacementReq";
+import slotLinkingReq from "./Components/Pages/Academic Members/Academic Member/SlotLinkingReq";
+import changeDayOff from "./Components/Pages/Academic Members/Academic Member/ChangeDayOff";
 ReactDOM.render(
   <Router>
    <HODNav/>
@@ -51,6 +62,19 @@ ReactDOM.render(
     <Route path="/viewAttendanceRecord" exact component={ViewAttendanceRecord} />
     <Route path="/InstructorsListViewPerCourse" exact component={InstructorsListViewPerCourse} />
     <Route path="/buttonsPageHod2" exact component={ButtonsPageHod2} />
+    <Route path="/compensationLeave" exact component={CompensationLeave} />
+    <Route path="/accidentialLeave" exact component={AccidentialLeave} />
+    <Route path="/annualLeave" exact component={AnnualLeave} />
+    <Route path="/maternityLeave" exact component={MaternityLeave} />
+    <Route path="/sickLeave" exact component={SickLeave} />
+    <Route path="/viewAll" exact component={viewAll} />
+    <Route path="/viewAccepted" exact component={viewAccepted} />
+    <Route path="/viewPending" exact component={ViewPending} />
+    <Route path="/viewRejected" exact component={viewRejected} />
+    <Route path="/replacementReq" exact component={replacementReq} />
+    <Route path="/slotLinkingReq" exact component={slotLinkingReq} />
+    <Route path="/viewSchedule" exact component={ViewSchedule} />
+    <Route path="/changeDayOff" exact component={changeDayOff} />
   </Router>,
 
   document.getElementById("root")
