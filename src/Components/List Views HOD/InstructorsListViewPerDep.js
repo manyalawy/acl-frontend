@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from "react"
 import Card from 'react-bootstrap/Card'
 import axios from 'axios'
-import { makeStyles } from '@material-ui/core/styles'
 import { useHistory } from 'react-router'
-import Checkbox from '@material-ui/core/Checkbox'
-
-export default function ViewAllStaff (props){
-  const token = localStorage.getItem("user");
-    const history = useHistory()
+ 
+export default function InstructorsListViewPerDep (){
     const [instructors, setInstructors] = useState('')
-    const instructors1=['Salma','Mai','Sara']
-
+    const instructors1 = ['Mai','Sara']
+    const history = useHistory()
+    const token = localStorage.getItem("user");
     useEffect(() => {
     axios({
-        url: 'localhost:8080/courseInstructor/viewAllStaff',
+        url: 'localhost:8080/headOfDepartment/viewStaffAll',
         method: 'POST',
         headers: {
           token: token,
@@ -30,15 +27,16 @@ export default function ViewAllStaff (props){
           console.log(error)
         })   
     });
-    const cardClick = () =>{
-      history.push('/login/CI/buttonsPage')
-    }
- 
+    
+    const theOnClick = () =>{
+      history.push("/buttonsPageHOD2")
+  }
+
     return(
       <div style={{ marginTop:'2vw'}}>
          <h style={{fontWeight:'bold', marginLeft:'40vw', fontSize:'1.5vw'}}>
         
-          Instructors 
+          Instructors in this department
        
         </h>
        
@@ -48,7 +46,7 @@ export default function ViewAllStaff (props){
           <table style={{marginTop:'1vw'}}>
           <tr> 
               <td>
-                <button onClick={cardClick} 
+                <button onClick={theOnClick} 
                 style={{border:'black', backgroundColor:'white'}}>
                <Card style={{width:'50vw', height:'3vw', borderWidth:'0.2vw', borderColor:'#a9a9a9'}}>
                 <tr>
@@ -68,7 +66,7 @@ export default function ViewAllStaff (props){
           Note: 
          </text>
          <text style={{marginLeft:'0.5vw', fontWeight:'bold'}}>
-         For instructor functionalities, please click on the instructor.
+         To Assign/Unassign an instructor or view their day off, please click on the instructor.
          </text>
       </div>
       )

@@ -2,24 +2,19 @@ import React, { useState, useEffect } from "react"
 import Card from 'react-bootstrap/Card'
 import axios from 'axios'
 import {useHistory} from 'react-router'
+import Button from 'react-bootstrap/Button'
 
-export default function ViewAllReq() {
+export default function ViewPending() {
   const [requests, setRequests]= useState('')
   const history = useHistory()
-  const requests1 =['Sick Leave', 'Maternity Leave']
+  const requests1 =['id:13erfcrqv' , 'id:fvkamvqoivw', 'id: deekdqfcmde']
   const token = localStorage.getItem("user");
-  const nav = () =>{
-    history.push('/acceptReject')
-  }
   useEffect(() => {  
         axios({
-          url: 'localhost:8080/headOfDepartment/viewRequests',
-          method: 'POST',
+          url: 'localhost:8080/academicMember/viewPendingReq',
+          method: 'GET',
           headers: {
             token: token,
-          },
-          data: {
-            id: "ac-5"
           },
         })
           .then((res) => {
@@ -30,14 +25,39 @@ export default function ViewAllReq() {
             console.log(error)
           }) 
     });
+    const cancelReq = (event) =>{
+      axios({
+        url: 'localhost:8080/academicMember/cancelReq',
+        method: 'POST',
+        headers: {
+          token: token,
+        },
+        data: {
+         reqId:"5fe5e4c0750d936ee4b3e4c1"
+        },
+      })
+        .then((res) => {
+          console.log(res) 
+        })
+        .catch((error) => {
+          console.log(error)
+        })   
+    }
 
     return(
       <div style={{ marginTop:'2vw'}}>
          <h style={{fontWeight:'bold', marginLeft:'40vw', fontSize:'1.5vw'}}>
         
-          Requests
+        Pending Requests
        
         </h>
+        <div style={{marginTop:'2vw', marginLeft:'75vw'}}>
+           <Button 
+           onClick={cancelReq}>
+             Cancel Pending Request
+           </Button>
+
+        </div>
        
           <div  style={{fontSize:'1vw', marginTop:'3vw', marginLeft:'1vw', marginBottom:'3vw'}}>
           {requests1.map((element,index) => {
@@ -45,8 +65,7 @@ export default function ViewAllReq() {
           <table style={{marginTop:'1vw'}}>
           <tr> 
               <td>
-                <button onClick={nav} 
-                style={{border:'black', backgroundColor:'white'}}>
+                
                <Card style={{width:'50vw', height:'3vw', borderWidth:'0.2vw', borderColor:'#a9a9a9'}}>
                 <tr>
                    <td>
@@ -54,19 +73,14 @@ export default function ViewAllReq() {
                    <td> &nbsp; &nbsp; &nbsp;<text style={{fontSize:'1vw',color:'#8b0000 '}}> {requests1[index]} </text> </td>
                 </tr>
                </Card>
-               </button>
+           
              </td>
           </tr>
           </table>
            )
          })}
          </div>
-         <text style={{marginLeft:'1.5vw', fontWeight:'bold', color:'#8b0000'}}>
-          Note: 
-         </text>
-         <text style={{marginLeft:'0.5vw', fontWeight:'bold'}}>
-           To Accept/Reject a request, please click on the request.
-         </text>
+      
       </div>
       )
 }

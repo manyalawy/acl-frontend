@@ -1,61 +1,56 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import Card from 'react-bootstrap/Card'
 // import { useDispatch, useSelector } from 'react-redux'
 // import { useHistory } from 'react-router'
 
-
-export default function courseInstructorFP() {
-
+export default function ViewSlots() {
   //const id = useSelector((state) => state.id)
+  // const dispatch = useDispatch()
+  // const history = useHistory()
+  const [slots, setSlots] = useState('')
+  const token = localStorage.getItem("user");
 
-  //const dispatch = useDispatch()
-  //const history = useHistory()
-  //const [validated, setValidated] = useState(false)
-
-//   useEffect(() => {
-//     // if (!dispatch(checkTokenExpired(history))) {
-//     axios({
-//       url: ,
-//       method: 'POST',
-//       headers: {
-//         authorization: token,
-//       },
-//       data: {
-//         Account: {
-//           id,
-//         },
-//         accountId,
-//       },
-//     })
-//       .then((res) => {
-//         console.log(res)
-//         if (res.data.statusCode === 0) {
-//           setExistingCourses(res.data.AllCourses)
-//           let y = []
-//           y.length = res.data.AllCourses.length
-//           console.log(y)
-//           res.data.AllCourses.map((element, index) => {
-//             y[index] = false
-//           })
-//           setOpenCourse(y)
-//           setLoading(false)
-//         }
-//       })
-//       .catch((error) => {
-//         console.log(error)
-//       })
-//     // }
-//   }, [])
+  useEffect(() => {
+    // if (!dispatch(checkTokenExpired(history))) {
+    axios({
+      url:'localhost:8080/courseInstructor/viewSlotsAssignment' ,
+      method: 'POST',
+      headers: {
+       token: token,
+      },
+      data: {
+        id:"ac4" 
+      },
+    })
+      .then((res) => {
+        console.log(res)
+        setSlots(res)
+      
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+    // }
+  }, [])
 
   return (
-    <div>
-    <text style={{marginTop:'3vw', marginLeft:'1vw', fontWeight:'bold', fontSize:'2vw'}}>
-      Slots : 
-    </text>
-    <text  style={{marginTop:'3vw', marginLeft:'0.5vw', fontWeight:'bold', fontSize:'2vw'}}>
-       [1st, 2nd, 5th]
-    </text>
-      
-    </div>
+    <div style={{marginTop:'2vw', marginLeft:'1vw'}}>
+    <Card style={{width:'28vw', height:'3vw', borderWidth:'0.2vw', borderColor:'#a9a9a9'}}>
+      <tr>
+        <td>
+    <text style={{marginTop:'3vw', marginLeft:'1vw', fontWeight:'bold', fontSize:'1vw'}}>
+      Assigned Slots:
+    </text> 
+    </td>
+    <td>
+ <text style={{marginTop:'3vw', marginLeft:'0.7vw', fontWeight:'bold', fontSize:'1vw', color:'red'}}>
+ {slots} [First, Second, Third, Fourth, Fifth]
+ </text> 
+ </td>
+ </tr>
+
+ </Card>
+  </div>
   )
 }

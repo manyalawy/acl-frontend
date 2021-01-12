@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import ReactDOM from "react-dom";
 import Login from "./Components/Pages/Staff Members/Login/Login";
 import ViewMyProfile from "./Components/Pages/Staff Members/View_my_profile/ViewMyProfile";
@@ -17,10 +17,12 @@ import HODNav from "./Components/NavBars/hodNav";
 import { SlotLinkingRequests } from "./Components/Pages/Academic Members/Course Coordinator/SlotLinkingRequests";
 import { CourseSlots } from "./Components/Pages/Academic Members/Course Coordinator/CourseSlots";
 
+
 ReactDOM.render(
   <Router>
-    <HODNav />
+   <HODNav/>
     <Route path="/login" exact component={Login} />
+
     <Route path="/" exact component={ViewMyProfile} />
     <Route path="/resetPassword" exact component={ResetPassowrd} />
     <Route path="/attendance" exact component={ViewAttendance} />
@@ -33,6 +35,7 @@ ReactDOM.render(
       component={viewSlotsAssignment}
     />
     <Route path="/login/CI/viewAllStaff" exact component={viewAllStaff} />
+
     <Route path="/login/coursesListView" exact component={CoursesListView} />
     <Route
       path="/login/InstructorsListView"
@@ -40,6 +43,7 @@ ReactDOM.render(
       component={InstructorsListView}
     />
     <Route path="/slotLinkingRequests" exact component={SlotLinkingRequests} />
+
   </Router>,
 
   document.getElementById("root")
