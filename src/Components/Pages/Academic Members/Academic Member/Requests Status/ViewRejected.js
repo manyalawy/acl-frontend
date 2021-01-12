@@ -3,23 +3,17 @@ import Card from 'react-bootstrap/Card'
 import axios from 'axios'
 import {useHistory} from 'react-router'
 
-export default function ViewAllReq() {
+export default function ViewRejected() {
   const [requests, setRequests]= useState('')
   const history = useHistory()
-  const requests1 =['Sick Leave', 'Maternity Leave']
+  const requests1 =['id: abcdefggdsah' , 'id: abcdefggdsah', 'id: abcdefggdsah']
   const token = localStorage.getItem("user");
-  const nav = () =>{
-    history.push('/acceptReject')
-  }
   useEffect(() => {  
         axios({
-          url: 'localhost:8080/headOfDepartment/viewRequests',
-          method: 'POST',
+          url: 'localhost:8080/academicMember/viewRejectedReq ',
+          method: 'GET',
           headers: {
             token: token,
-          },
-          data: {
-            id: "ac-5"
           },
         })
           .then((res) => {
@@ -35,7 +29,7 @@ export default function ViewAllReq() {
       <div style={{ marginTop:'2vw'}}>
          <h style={{fontWeight:'bold', marginLeft:'40vw', fontSize:'1.5vw'}}>
         
-          Requests
+        Rejected Requests
        
         </h>
        
@@ -45,8 +39,7 @@ export default function ViewAllReq() {
           <table style={{marginTop:'1vw'}}>
           <tr> 
               <td>
-                <button onClick={nav} 
-                style={{border:'black', backgroundColor:'white'}}>
+                
                <Card style={{width:'50vw', height:'3vw', borderWidth:'0.2vw', borderColor:'#a9a9a9'}}>
                 <tr>
                    <td>
@@ -54,19 +47,14 @@ export default function ViewAllReq() {
                    <td> &nbsp; &nbsp; &nbsp;<text style={{fontSize:'1vw',color:'#8b0000 '}}> {requests1[index]} </text> </td>
                 </tr>
                </Card>
-               </button>
+           
              </td>
           </tr>
           </table>
            )
          })}
          </div>
-         <text style={{marginLeft:'1.5vw', fontWeight:'bold', color:'#8b0000'}}>
-          Note: 
-         </text>
-         <text style={{marginLeft:'0.5vw', fontWeight:'bold'}}>
-           To Accept/Reject a request, please click on the request.
-         </text>
+      
       </div>
       )
 }

@@ -1,5 +1,4 @@
-// eslint-disable-next-line
-import React from "react";
+import React from "react"
 import ReactDOM from "react-dom";
 import Login from "./Components/Pages/Staff Members/Login/Login";
 import ViewMyProfile from "./Components/Pages/Staff Members/View_my_profile/ViewMyProfile";
@@ -22,9 +21,10 @@ import { CourseSlots } from "./Components/Pages/Academic Members/Course Coordina
 import SendDayOffRequest from "./Components/Pages/Academic Members/Academic Member/Change Day Off Request/ChangeDayOff";
 import StaffAttendance from "./Components/Pages/HR Members/View Staff Member Attendance/StaffAttendance";
 
+
 ReactDOM.render(
   <Router>
-    <HODNav />
+   <HODNav/>
     <Route path="/login" exact component={Login} />
     <Route path="/changeDayOff" exact component={SendDayOffRequest} />
     <Route path="/" exact component={ViewMyProfile} />
@@ -39,6 +39,7 @@ ReactDOM.render(
       component={viewSlotsAssignment}
     />
     <Route path="/login/CI/viewAllStaff" exact component={viewAllStaff} />
+
     <Route path="/login/coursesListView" exact component={CoursesListView} />
     <Route
       path="/login/InstructorsListView"
@@ -46,7 +47,9 @@ ReactDOM.render(
       component={InstructorsListView}
     />
     <Route path="/slotLinkingRequests" exact component={SlotLinkingRequests} />
+
     <Route path="/staffAttendance" exac component={StaffAttendance} />
+
   </Router>,
 
   document.getElementById("root")
