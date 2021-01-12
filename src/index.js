@@ -20,6 +20,7 @@ import HODNav from "./Components/NavBars/hodNav";
 import { SlotLinkingRequests } from "./Components/Pages/Academic Members/Course Coordinator/SlotLinkingRequests";
 import { CourseSlots } from "./Components/Pages/Academic Members/Course Coordinator/CourseSlots";
 import SendDayOffRequest from "./Components/Pages/Academic Members/Academic Member/Change Day Off Request/ChangeDayOff";
+import StaffAttendance from "./Components/Pages/HR Members/View Staff Member Attendance/StaffAttendance";
 
 ReactDOM.render(
   <Router>
@@ -45,6 +46,7 @@ ReactDOM.render(
       component={InstructorsListView}
     />
     <Route path="/slotLinkingRequests" exact component={SlotLinkingRequests} />
+    <Route path="/staffAttendance" exac component={StaffAttendance} />
   </Router>,
 
   document.getElementById("root")
