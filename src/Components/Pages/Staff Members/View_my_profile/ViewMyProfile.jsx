@@ -27,8 +27,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const token = localStorage.getItem("user");
-const decoded = jwt_decoded(token);
+
 const ViewMyProfile = () => {
+  const decoded = jwt_decoded(token);
   const [data, setData] = useState("");
   const [openModal, setOpenModal] = React.useState(false);
 
