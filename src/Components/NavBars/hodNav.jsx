@@ -54,8 +54,11 @@ const HODNav = () => {
   const changeDayOff = () =>{
     history.push('/changeDayOff')
   }
-  const replacementReq = () =>{
-    history.push('/replacementReq')
+  const sendReplacementReq = () =>{
+    history.push('/sendReplacementReq')
+  }
+  const viewReplacementReq = () =>{
+    history.push('/viewReplacementReq')
   }
   const slotLinkingReq = () =>{
     history.push('/slotLinkingReq')
@@ -105,8 +108,12 @@ const HODNav = () => {
               View All Requests
             </NavDropdown.Item>
             <NavDropdown.Item 
-            onClick={replacementReq}>
-              Replacement Requests
+            onClick={sendReplacementReq}>
+              Send Replacement Requests
+            </NavDropdown.Item>
+            <NavDropdown.Item 
+            onClick={viewReplacementReq}>
+              View Replacement Requests
             </NavDropdown.Item>
             <NavDropdown.Item
             onClick={slotLinkingReq}>

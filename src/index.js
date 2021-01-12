@@ -34,7 +34,8 @@ import viewAccepted from './Components/Pages/Academic Members/Academic Member/Re
 import ViewPending from './Components/Pages/Academic Members/Academic Member/Requests Status/ViewPending'
 import viewRejected from './Components/Pages/Academic Members/Academic Member/Requests Status/ViewRejected'
 import ViewSchedule from "./Components/Pages/Academic Members/Academic Member/ViewSchedule";
-import replacementReq from "./Components/Pages/Academic Members/Academic Member/SendReplacementReq";
+import SendReplacementReq from "./Components/Pages/Academic Members/Academic Member/SendReplacementReq";
+import viewReplacementReq from "./Components/Pages/Academic Members/Academic Member/ViewReplacementReq";
 import slotLinkingReq from "./Components/Pages/Academic Members/Academic Member/SlotLinkingReq";
 import changeDayOff from "./Components/Pages/Academic Members/Academic Member/ChangeDayOff";
 ReactDOM.render(
@@ -71,7 +72,8 @@ ReactDOM.render(
     <Route path="/viewAccepted" exact component={viewAccepted} />
     <Route path="/viewPending" exact component={ViewPending} />
     <Route path="/viewRejected" exact component={viewRejected} />
-    <Route path="/replacementReq" exact component={replacementReq} />
+    <Route path="/sendReplacementReq" exact component={SendReplacementReq} />
+    <Route path="/viewReplacementReq" exact component={viewReplacementReq} />
     <Route path="/slotLinkingReq" exact component={slotLinkingReq} />
     <Route path="/viewSchedule" exact component={ViewSchedule} />
     <Route path="/changeDayOff" exact component={changeDayOff} />
