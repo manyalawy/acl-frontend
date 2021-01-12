@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import ReactDOM from "react-dom";
 import Login from "./Components/Pages/Staff Members/Login/Login";
 //import ViewMyProfile from "./Components/Pages/Staff Members/View_my_profile/ViewMyProfile";

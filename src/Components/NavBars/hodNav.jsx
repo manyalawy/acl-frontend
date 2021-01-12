@@ -69,9 +69,11 @@ const HODNav = () => {
             >
               Replacement Requests
             </NavDropdown.Item>
-            <NavDropdown.Item 
-            >
+            <NavDropdown.Item>
               Slot Linking Requests
+            </NavDropdown.Item>
+            <NavDropdown.Item>
+            Change Day Off
             </NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Leave System" id="collasible-nav-dropdown">

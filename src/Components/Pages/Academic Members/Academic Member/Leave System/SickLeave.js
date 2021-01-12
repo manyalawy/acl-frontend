@@ -1,7 +1,10 @@
 import React from 'react'
+import axios from 'axios'
 
-export default function ReplacementReq(){
+export default function SickLeave(){
     return(
-        <div></div>
+        <div>
+
+        </div>
     )
 }

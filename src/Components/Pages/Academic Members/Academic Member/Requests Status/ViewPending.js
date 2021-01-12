@@ -1,7 +1,9 @@
 import React from 'react'
 
-export default function ReplacementReq(){
+export default function ViewPending(){
     return(
-        <div></div>
+        <div>
+            
+        </div>
     )
 }
