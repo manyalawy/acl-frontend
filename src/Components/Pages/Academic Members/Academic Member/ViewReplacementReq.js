@@ -2,16 +2,19 @@ import React, { useState, useEffect } from "react"
 import Card from 'react-bootstrap/Card'
 import axios from 'axios'
 import {useHistory} from 'react-router'
-import Button from 'react-bootstrap/Button'
 
-export default function ViewPending() {
+export default function ViewReplacementReq() {
   const [requests, setRequests]= useState('')
   const history = useHistory()
-  const requests1 =['id:13erfcrqv' , 'id:fvkamvqoivw', 'id: deekdqfcmde']
+  const requests1 =[
+      ['status : pending', 'id: abcdefgh'],
+      ['status : accepted', 'id: abcdefklh'],
+      ['status : pending', 'id: abcdefggdsah']
+    ]
   const token = localStorage.getItem("user");
   useEffect(() => {  
         axios({
-          url: 'localhost:8080/academicMember/viewPendingReq',
+          url: 'localhost:8080/academicMember/viewReplacementReq',
           method: 'GET',
           headers: {
             token: token,
@@ -25,39 +28,14 @@ export default function ViewPending() {
             console.log(error)
           }) 
     });
-    const cancelReq = (event) =>{
-      axios({
-        url: 'localhost:8080/academicMember/cancelReq',
-        method: 'POST',
-        headers: {
-          token: token,
-        },
-        data: {
-         reqId:"5fe5e4c0750d936ee4b3e4c1"
-        },
-      })
-        .then((res) => {
-          console.log(res) 
-        })
-        .catch((error) => {
-          console.log(error)
-        })   
-    }
 
     return(
       <div style={{ marginTop:'2vw'}}>
          <h style={{fontWeight:'bold', marginLeft:'40vw', fontSize:'1.5vw'}}>
         
-        Pending Requests
+          Requests
        
         </h>
-        <div style={{marginTop:'2vw', marginLeft:'75vw'}}>
-           <Button 
-           onClick={cancelReq}>
-             Cancel Pending Request
-           </Button>
-
-        </div>
        
           <div  style={{fontSize:'1vw', marginTop:'3vw', marginLeft:'1vw', marginBottom:'3vw'}}>
           {requests1.map((element,index) => {

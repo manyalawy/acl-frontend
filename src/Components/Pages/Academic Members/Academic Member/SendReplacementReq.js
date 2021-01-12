@@ -3,14 +3,16 @@ import axios from 'axios'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-export default function SlotLinkingReq(){
+export default function SendReplacementReq(){
     const token = localStorage.getItem("user");
-
+    const [receiverId, setReceiverId]= useState('');
     const [dateToBeRequested, setDateToBeRequested]= useState('');
     const [slotId, setSlotId]= useState('');
     const [validated, setValidated] = useState(false)
 
- 
+    const handleReceiverId = (e) => {
+        setReceiverId(e.target.value)
+      }
     const handledateToBeRequested = (e) => {
         setDateToBeRequested(e.target.value)
       }
@@ -20,13 +22,14 @@ export default function SlotLinkingReq(){
 
     const handleSubmit = (event) =>{
         axios({
-          url: 'localhost:8080/academicMember/slotLinkingReq ',
+          url: 'localhost:8080/academicMember/replacementReq',
           method: 'POST',
           headers: {
             token: token,
           },
           data: {
-          dateReq: dateToBeRequested,
+          receiver_id: receiverId,
+          date_to_be_requested: dateToBeRequested,
           slot_id: slotId
           },
         })
@@ -40,18 +43,32 @@ export default function SlotLinkingReq(){
     return(
         <div style={{marginTop:'2vw'}}>
             <h style={{marginLeft:'1vw',fontSize:'1.5vw',fontWeight:'bold'}}>
-              Slot Linking Request
+              Replacement Request
             </h>
             <Form style={{marginLeft:'1vw', marginTop:'2vw'}}
             noValidate
             validated={validated}
             onSubmit={handleSubmit}>
                 <Form.Group>
-                    
                     <tr>
                     <td>
                     <Form.Label style={{marginBottom:'1vw'}}>
-                        Date Requested:
+                        Receiver Id:
+                    </Form.Label>
+                    </td>
+                    &nbsp;
+                    <td>
+                    <Form.Control style={{marginBottom:'1vw'}}
+                   value={receiverId} 
+                   onChange={handleReceiverId}
+                   required>
+                    </Form.Control>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <Form.Label style={{marginBottom:'1vw'}}>
+                        Date To Be Requested:
                     </Form.Label>
                     </td>
                     &nbsp;
@@ -81,7 +98,7 @@ export default function SlotLinkingReq(){
 
                 </Form.Group>
                 <Button variant="primary" type="submit"
-                style={{marginLeft:'16vw'}}
+                style={{marginLeft:'19vw'}}
                 onClick={handleSubmit}>
                  Submit
                 </Button>

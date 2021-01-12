@@ -34,7 +34,7 @@ import viewAccepted from './Components/Pages/Academic Members/Academic Member/Re
 import ViewPending from './Components/Pages/Academic Members/Academic Member/Requests Status/ViewPending'
 import viewRejected from './Components/Pages/Academic Members/Academic Member/Requests Status/ViewRejected'
 import ViewSchedule from "./Components/Pages/Academic Members/Academic Member/ViewSchedule";
-import replacementReq from "./Components/Pages/Academic Members/Academic Member/ReplacementReq";
+import replacementReq from "./Components/Pages/Academic Members/Academic Member/SendReplacementReq";
 import slotLinkingReq from "./Components/Pages/Academic Members/Academic Member/SlotLinkingReq";
 import changeDayOff from "./Components/Pages/Academic Members/Academic Member/ChangeDayOff";
 ReactDOM.render(
