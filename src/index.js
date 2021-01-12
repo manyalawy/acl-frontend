@@ -21,6 +21,7 @@ import ViewDayOffAll from "./Components/Pages/Academic Members/HOD/viewDayOffAll
 import ViewDayOffX from "./Components/Pages/Academic Members/HOD/viewDayOffX";
 import acceptRejectReq from "./Components/Pages/Academic Members/HOD/acceptRejectReq";
 import ViewCoverageHOD from "./Components/Pages/Academic Members/HOD/viewCoverageHOD";
+import ViewAttendanceRecord from './Components/Pages/HR Members/viewAttendanceRecord'
 
 ReactDOM.render(
   <Router>
@@ -42,6 +43,8 @@ ReactDOM.render(
     <Route path="/viewDayOffX" exact component={ViewDayOffX} />
     <Route path="/acceptReject" exact component={acceptRejectReq} />
     <Route path="/viewCoverageHOD" exact component={ViewCoverageHOD} />
+
+    <Route path="/viewAttendanceRecord" exact component={ViewAttendanceRecord} />
   </Router>,
 
   document.getElementById("root")
