@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import Card from 'react-bootstrap/Card'
 // import { useDispatch, useSelector } from 'react-redux'
 // import { useHistory } from 'react-router'
 
@@ -34,15 +35,22 @@ export default function ViewSlots() {
   }, [])
 
   return (
-    <div>
-
-    <text style={{marginTop:'3vw', marginLeft:'1vw', fontWeight:'bold', fontSize:'2vw'}}>
-     Assigned Slots : 
-    </text>
-    <text  style={{marginTop:'3vw', marginLeft:'0.5vw', fontWeight:'bold', fontSize:'2vw'}}>
-     {slots}
+    <div style={{marginTop:'2vw', marginLeft:'1vw'}}>
+    <Card style={{width:'28vw', height:'3vw', borderWidth:'0.2vw', borderColor:'#a9a9a9'}}>
+      <tr>
+        <td>
+    <text style={{marginTop:'3vw', marginLeft:'1vw', fontWeight:'bold', fontSize:'1vw'}}>
+      Assigned Slots:
     </text> 
-    
-    </div>
+    </td>
+    <td>
+ <text style={{marginTop:'3vw', marginLeft:'0.7vw', fontWeight:'bold', fontSize:'1vw', color:'red'}}>
+ {slots} [First, Second, Third, Fourth, Fifth]
+ </text> 
+ </td>
+ </tr>
+
+ </Card>
+  </div>
   )
 }

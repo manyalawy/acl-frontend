@@ -6,7 +6,7 @@ import { useHistory } from 'react-router'
 const CINav = () => {
   const history = useHistory()
   const ViewCov = () =>{
-  history.push("/login/CI/viewCoverage")
+  history.push("/login/CI/coursesCI")
 }
   const viewSlots = () =>{
   history.push("/login/CI/viewSlotsAssignment")
@@ -23,22 +23,28 @@ const CINav = () => {
         <Nav className="mr-auto">
 
         <NavDropdown title="Profile" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">View profile</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">
-              Update profile
+            <NavDropdown.Item >View Profile</NavDropdown.Item>
+            <NavDropdown.Item >
+              Update Profile
             </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Attendance</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">
+            <NavDropdown.Item>Attendance</NavDropdown.Item>
+            <NavDropdown.Item>
               Reset password
             </NavDropdown.Item>
     
           </NavDropdown>
-           <Nav.Link href="#features"
+          
+           <NavDropdown title="Staff" id="collasible-nav-dropdown">
+            <NavDropdown.Item 
+            onClick={viewAllStaffPerCourse}>View All Staff</NavDropdown.Item>
+            
+          </NavDropdown>
+           <Nav.Link 
            onClick={ViewCov}>View Courses Coverage</Nav.Link>
-           <Nav.Link href="#features"
+           <Nav.Link 
            onClick={viewSlots}>View Slots Assignments</Nav.Link>  
-           <Nav.Link href="#features"
-           onClick={viewAllStaffPerCourse}>View All Staff</Nav.Link>
+          
+
         </Nav>
 
         <Nav>

@@ -24,16 +24,18 @@ import ViewCoverageHOD from "./Components/Pages/Academic Members/HOD/viewCoverag
 import ViewAttendanceRecord from './Components/Pages/HR Members/viewAttendanceRecord'
 import InstructorsListViewPerCourse from './Components/List Views HOD/InstructorsListViewPerCourse'
 import ButtonsPageHod2 from "./Components/List Views HOD/buttonsPageHOD2";
+import coursesCI from "./Components/Pages/Academic Members/Course Instructor/coursesCI";
 
 ReactDOM.render(
   <Router>
-   <HODNav/>
+   <CINav/>
     <Route path="/login" exact component={Login} />
 
     <Route path="/login/CI/viewCoverage" exact component={viewCoverage} />
     <Route path="/login/CI/viewSlotsAssignment" exact component={viewSlotsAssignment} />
     <Route path="/login/CI/viewAllStaff" exact component={viewAllStaff} />
     <Route path="/login/CI/buttonsPage" exact component={buttonsPage} />
+    <Route path="/login/CI/coursesCI" exact component={coursesCI} />
 
     <Route path="/coursesListView" exact component={CoursesListView} />
     <Route path="/buttonsPageHod" exact component={ButtonsPageHod} />

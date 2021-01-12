@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import Card from 'react-bootstrap/Card'
 import axios from 'axios'
 import { useHistory } from 'react-router'
-
+ 
 export default function InstructorsListViewPerDep (){
     const [instructors, setInstructors] = useState('')
     const instructors1 = ['Mai','Sara']
