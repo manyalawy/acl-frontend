@@ -49,12 +49,7 @@ const HODNav = () => {
             onClick={viewDayOff}>View Day Off All
             </NavDropdown.Item>
           </NavDropdown>
-          <NavDropdown title="Requests" id="collasible-nav-dropdown">
-            <NavDropdown.Item 
-            onClick={viewRequests}>
-              View All requests
-            </NavDropdown.Item>
-          </NavDropdown>
+      
           <NavDropdown title="Courses" id="collasible-nav-dropdown">
           <NavDropdown.Item 
             onClick={viewCourses}>
@@ -65,6 +60,50 @@ const HODNav = () => {
               View Teaching Assigments
             </NavDropdown.Item>
           </NavDropdown>
+          <NavDropdown title="Requests" id="collasible-nav-dropdown">
+            <NavDropdown.Item 
+            onClick={viewRequests}>
+              View All Requests
+            </NavDropdown.Item>
+            <NavDropdown.Item 
+            >
+              Replacement Requests
+            </NavDropdown.Item>
+            <NavDropdown.Item 
+            >
+              Slot Linking Requests
+            </NavDropdown.Item>
+          </NavDropdown>
+          <NavDropdown title="Leave System" id="collasible-nav-dropdown">
+            <NavDropdown.Item 
+            >
+             Annual Leave
+            </NavDropdown.Item>
+            <NavDropdown.Item
+          >Accidential Leave</NavDropdown.Item>
+              <NavDropdown.Item
+            >Sick Leave
+            </NavDropdown.Item>
+            <NavDropdown.Item
+            >Maternity Leave
+            </NavDropdown.Item>
+          </NavDropdown>
+          <NavDropdown title="Requests Status" id="collasible-nav-dropdown">
+            <NavDropdown.Item>
+              View All 
+            </NavDropdown.Item>
+            <NavDropdown.Item>
+              View Accepted Requests
+            </NavDropdown.Item>
+            <NavDropdown.Item>
+              View Pending Requests
+            </NavDropdown.Item>
+            <NavDropdown.Item>
+              View Rejected Requests
+            </NavDropdown.Item>
+          </NavDropdown>
+         
+      
           <Nav.Link >View schedule</Nav.Link>
         </Nav>
         <Nav>

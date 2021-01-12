@@ -28,7 +28,7 @@ import coursesCI from "./Components/Pages/Academic Members/Course Instructor/cou
 
 ReactDOM.render(
   <Router>
-   <CINav/>
+   <HODNav/>
     <Route path="/login" exact component={Login} />
 
     <Route path="/login/CI/viewCoverage" exact component={viewCoverage} />
