@@ -10,19 +10,23 @@ import viewCoverage from "./Components/Pages/Academic Members/Course Instructor/
 import viewAllStaff from "./Components/Pages/Academic Members/Course Instructor/viewAllStaff";
 import CoursesListView from "./Components/List Views/coursesListView";
 import InstructorsListView from "./Components/List Views/InstructorsListViewPerCourse";
+// eslint-disable-next-line
 import isAuth from "./Services/isAuth";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+// eslint-disable-next-line
 import HRNav from "./Components/NavBars/hrNav";
 import HODNav from "./Components/NavBars/hodNav";
 import { SlotLinkingRequests } from "./Components/Pages/Academic Members/Course Coordinator/SlotLinkingRequests";
 import { CourseSlots } from "./Components/Pages/Academic Members/Course Coordinator/CourseSlots";
+import SendDayOffRequest from "./Components/Pages/Academic Members/Academic Member/Change Day Off Request/ChangeDayOff";
+import StaffAttendance from "./Components/Pages/HR Members/View Staff Member Attendance/StaffAttendance";
 
 
 ReactDOM.render(
   <Router>
    <HODNav/>
     <Route path="/login" exact component={Login} />
-
+    <Route path="/changeDayOff" exact component={SendDayOffRequest} />
     <Route path="/" exact component={ViewMyProfile} />
     <Route path="/resetPassword" exact component={ResetPassowrd} />
     <Route path="/attendance" exact component={ViewAttendance} />
@@ -43,6 +47,8 @@ ReactDOM.render(
       component={InstructorsListView}
     />
     <Route path="/slotLinkingRequests" exact component={SlotLinkingRequests} />
+
+    <Route path="/staffAttendance" exac component={StaffAttendance} />
 
   </Router>,
 
