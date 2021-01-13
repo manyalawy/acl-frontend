@@ -16,6 +16,8 @@ import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
+import { withRouter } from "react-router-dom";
+
 const token = localStorage.getItem("user");
 let rows = [];
 
@@ -196,4 +198,4 @@ function createData(sign_in, sign_out) {
   return { sign_in, sign_out };
 }
 
-export default StaffAttendance;
+export default withRouter(StaffAttendance);
