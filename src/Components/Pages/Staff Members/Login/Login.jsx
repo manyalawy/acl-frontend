@@ -6,6 +6,8 @@ import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import isAuth from "../../../../Services/isAuth";
+import { Redirect } from "react-router-dom";
 
 import guc_logo from "./Assets/guc_logo.png";
 const axios = require("axios").default;
@@ -64,6 +66,9 @@ const Login = () => {
         setOpen(true);
       });
   };
+  if (isAuth() === true) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <div>
