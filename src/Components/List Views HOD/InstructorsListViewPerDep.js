@@ -10,13 +10,10 @@ export default function InstructorsListViewPerDep (){
     const token = localStorage.getItem("user");
     useEffect(() => {
     axios({
-        url: 'localhost:8080/headOfDepartment/viewStaffAll',
-        method: 'POST',
+        url: 'http://localhost:8080/headOfDepartment/viewStaffAll',
+        method: 'GET',
         headers: {
           token: token,
-        },
-        data: {
-          course_name: "csen701"
         },
       })
         .then((res) => {
@@ -26,7 +23,7 @@ export default function InstructorsListViewPerDep (){
         .catch((error) => {
           console.log(error)
         })   
-    });
+    },[]);
     
     const theOnClick = () =>{
       history.push("/buttonsPageHOD2")

@@ -5,7 +5,7 @@ export default function ButtonsPage(){
   const token = localStorage.getItem("user");
     const assignToSlot= () =>{
         axios({
-          url: 'localhost:8080/courseInstructor/assignInstructorToSlot ',
+          url: 'http://localhost:8080/courseInstructor/assignInstructorToSlot ',
           method: 'POST',
           headers: {
             token: token,
@@ -15,8 +15,13 @@ export default function ButtonsPage(){
             courseName:"mecha" 
           },
         })
-          .then((res) => {
-            console.log(res) 
+          .then((response) => {
+            console.log(response) 
+            if (response.data.error) {
+                alert(response.data.error);
+              } else {
+                alert(response.data.msg);
+              }      
           })
           .catch((error) => {
             console.log(error)
@@ -25,7 +30,7 @@ export default function ButtonsPage(){
   
       const assignToCC= () =>{
         axios({
-          url: 'localhost:8080/courseInstructor/academicMemberToCourseCoordinator',
+          url: 'http://localhost:8080/courseInstructor/academicMemberToCourseCoordinator',
           method: 'POST',
           headers: {
             token: token,
@@ -34,9 +39,14 @@ export default function ButtonsPage(){
             id: "ac-4", 
           },
         })
-          .then((res) => {
-            console.log(res) 
-          })
+        .then((response) => {
+          console.log(response) 
+          if (response.data.error) {
+              alert(response.data.error);
+            } else {
+              alert(response.data.msg);
+            }      
+        })
           .catch((error) => {
             console.log(error)
           })   
@@ -44,7 +54,7 @@ export default function ButtonsPage(){
   
       const updateA= () =>{
         axios({
-          url: 'localhost:8080/courseInstructor/updateAnAssignment',
+          url: 'http://localhost:8080/courseInstructor/updateAnAssignment',
           method: 'POST',
           headers: {
             token: token,
@@ -54,9 +64,14 @@ export default function ButtonsPage(){
              courseName:"mecha"
           },
         })
-          .then((res) => {
-            console.log(res) 
-          })
+        .then((response) => {
+          console.log(response) 
+          if (response.data.error) {
+              alert(response.data.error);
+            } else {
+              alert(response.data.msg);
+            }      
+        })
           .catch((error) => {
             console.log(error)
           })   
@@ -64,8 +79,8 @@ export default function ButtonsPage(){
   
       const removeA= () =>{
         axios({
-          url: 'localhost:8080/courseInstructor/removeAnAssignedMember',
-          method: 'POST',
+          url: 'http://localhost:8080/courseInstructor/removeAnAssignedMember',
+          method: 'DELETE',
           headers: {
             token: token,
           },
@@ -73,9 +88,14 @@ export default function ButtonsPage(){
             id: "abc", 
           },
         })
-          .then((res) => {
-            console.log(res) 
-          })
+        .then((response) => {
+          console.log(response) 
+          if (response.data.error) {
+              alert(response.data.error);
+            } else {
+              alert(response.data.msg);
+            }      
+        })
           .catch((error) => {
             console.log(error)
           })   

@@ -5,7 +5,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import { Button } from "@material-ui/core";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import React, { useState } from "react";
-import axios from "axios";
+import axios from "axios"; 
 
 export default function UpdateProfileModal(props) {
   const [email, setEmail] = useState("");

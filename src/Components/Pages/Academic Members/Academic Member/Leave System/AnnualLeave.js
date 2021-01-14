@@ -17,8 +17,11 @@ export default function MaternityLeave(){
       }
 
     const handleSubmit = (event) =>{
+      if (dateAbsent === "" || reason === "" ) {
+        alert("One of the inputs is missing");
+      }
         axios({
-          url: 'localhost:8080/academicMember/annualLeaveReq ',
+          url: 'http://localhost:8080/academicMember/annualLeaveReq ',
           method: 'POST',
           headers: {
             token: token,

@@ -17,19 +17,27 @@ export default function AccidentialLeave(){
       }
 
     const handleSubmit = (event) =>{
+      if (dateAbsent === "" || reason === "") {
+        alert("One of the inputs is missing");
+      }
         axios({
-          url: 'localhost:8080/academicMember/acciLeaveReq ',
+          url: 'http://localhost:8080/academicMember/acciLeaveReq ',
           method: 'POST',
           headers: {
             token: token,
           },
           data: {
-          AbsentDate: dateAbsent,
+          absentDate: dateAbsent,
           reason:reason
           },
         })
           .then((res) => {
             console.log(res) 
+            if (res.data.error) {
+              alert(res.data.error);
+            } else {
+              alert(res.data.msg);
+            } 
           })
           .catch((error) => {
             console.log(error)
@@ -41,8 +49,7 @@ export default function AccidentialLeave(){
                 Accidential Leave
             </h>
             <Form style={{marginLeft:'1vw', marginTop:'2vw'}}
-            noValidate
-            validated={validated}
+        
             onSubmit={handleSubmit}>
                 <Form.Group>
                     <tr>
@@ -56,8 +63,12 @@ export default function AccidentialLeave(){
                     <Form.Control style={{marginBottom:'1vw'}}
                    value={dateAbsent} 
                    onChange={handleDateAbsent}
-                   required>
+                >
                     </Form.Control>
+                    <Form.Control.Feedback
+                   >
+                      This field is required
+                    </Form.Control.Feedback>
                     </td>
                     </tr>
                     <tr>
@@ -71,7 +82,7 @@ export default function AccidentialLeave(){
                     <Form.Control style={{marginBottom:'1vw'}}
                     value={reason}
                     onChange={handleReason}
-                    required>
+                  >
                     </Form.Control>
                     </td>
                     </tr>

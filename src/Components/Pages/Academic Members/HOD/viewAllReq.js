@@ -13,8 +13,8 @@ export default function ViewAllReq() {
   }
   useEffect(() => {  
         axios({
-          url: 'localhost:8080/headOfDepartment/viewRequests',
-          method: 'POST',
+          url: 'http://localhost:8080/headOfDepartment/viewRequests',
+          method: 'GET',
           headers: {
             token: token,
           },
@@ -29,7 +29,7 @@ export default function ViewAllReq() {
           .catch((error) => {
             console.log(error)
           }) 
-    });
+    },[]);
 
     return(
       <div style={{ marginTop:'2vw'}}>

@@ -7,38 +7,50 @@ export default function ButtonsPageHod2(){
 
     const assignInst = () =>{
         axios({
-          url: 'localhost:8080/headOfDepartment/assignInst',
+          url: 'http://localhost:8080/headOfDepartment/assignInst',
           method: 'POST',
           headers: {
             token: token,
           },
           data: {
-            id: "ac4", 
-            courseName:"mecha" 
+            id: "5fdfddd624f5837ddbccc5c3", 
+            course_name:"bio" 
           },
         })
           .then((res) => {
             console.log(res) 
+            if (res.data.error) {
+              alert(res.data.error);
+            } else {
+              alert(res.data.msg);
+            }
           })
+          
           .catch((error) => {
             console.log(error)
+         
           })   
       }
 
       const unassignInst = () =>{
         axios({
-          url: 'localhost:8080/headOfDepartment/unassignInst',
+          url: 'http://localhost:8080/headOfDepartment/unassignInst',
           method: 'POST',
           headers: {
             token: token,
           },
           data: {
-            id: "ac4", 
-            courseName:"mecha" 
+            id: "5fdfddd624f5837ddbccc5c3", 
+            course_name:"bio" 
           },
         })
           .then((res) => {
             console.log(res) 
+            if (res.data.error) {
+              alert(res.data.error);
+            } else {
+              alert(res.data.msg);
+            }
           })
           .catch((error) => {
             console.log(error)
@@ -47,18 +59,24 @@ export default function ButtonsPageHod2(){
 
       const reassignInst = () =>{
         axios({
-          url: 'localhost:8080/headOfDepartment/reassignInst',
+          url: 'http://localhost:8080/headOfDepartment/reassignInst',
           method: 'POST',
           headers: {
             token: token,
           },
           data: {
-            id: "ac4", 
-            courseName:"mecha" 
+            id: "5fdfddd624f5837ddbccc5c3",
+             course_name_remove:"bio", 
+             course_name_add:"mecha"
           },
         })
           .then((res) => {
             console.log(res) 
+            if (res.data.error) {
+              alert(res.data.error);
+            } else {
+              alert(res.data.msg);
+            }
           })
           .catch((error) => {
             console.log(error)

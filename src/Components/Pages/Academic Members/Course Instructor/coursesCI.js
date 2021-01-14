@@ -11,7 +11,7 @@ export default function CoursesCI (){
     const history = useHistory()
     useEffect(() => {
     axios({
-        url: 'localhost:8080/courseInstructor/viewAllCourses',
+        url: 'http://localhost:8080/courseInstructor/viewInst',
         method: 'POST',
         headers: {
          token: token,
@@ -19,7 +19,7 @@ export default function CoursesCI (){
       })
         .then((res) => {
           console.log(res) 
-          setCourses(res.data)
+          setCourses(res.data.courses)
         })
         .catch((error) => {
           console.log(error)
@@ -50,7 +50,7 @@ export default function CoursesCI (){
               <tr>
                  <td>
                    <text style={{marginLeft:'2vw', fontWeight:'bold', fontSize:'1vw'}}> {index+1} </text></td>
-                 <td> &nbsp; &nbsp; &nbsp;<text style={{fontSize:'1vw',color:'#8b0000 '}}> {course1[index]} </text> </td>
+                 <td> &nbsp; &nbsp; &nbsp;<text style={{fontSize:'1vw',color:'#8b0000 '}}> {courses[index]} </text> </td>
               </tr>
              </Card>
              </button>

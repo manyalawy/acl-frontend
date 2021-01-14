@@ -6,17 +6,22 @@ export default function AcceptRejectReq(){
 
     const acceptReq = () =>{
         axios({
-          url: 'localhost:8080 /headOfDepartment/acceptRequest ',
+          url: 'http://localhost:8080/headOfDepartment/acceptRequest ',
           method: 'POST',
           headers: {
             token: token,
           },
           data: {
-            id: "5fe5e4c0750d936ee4b3e4c1",
+            request_id: "5fe4e14fdb423168510f93d6"
           },
         })
           .then((res) => {
             console.log(res) 
+            if (res.data.error) {
+              alert(res.data.error);
+            } else {
+              alert(res.data.msg);
+            } 
           })
           .catch((error) => {
             console.log(error)
@@ -25,7 +30,7 @@ export default function AcceptRejectReq(){
 
       const rejectReq = () =>{
         axios({
-          url: 'localhost:8080/headOfDepartment/rejectRequest',
+          url: 'http://localhost:8080/headOfDepartment/rejectRequest',
           method: 'POST',
           headers: {
             token: token,
@@ -37,13 +42,17 @@ export default function AcceptRejectReq(){
         })
           .then((res) => {
             console.log(res) 
+            if (res.data.error) {
+              alert(res.data.error);
+            } else {
+              alert(res.data.msg);
+            }      
           })
           .catch((error) => {
             console.log(error)
           })   
       }
     return(
- 
          <div style={{marginTop:'5vw', marginLeft:'52vw'}}>
              <button style={{backgroundColor:'black', border:'none', color:'white'}}
              onClick={acceptReq}>

@@ -11,7 +11,7 @@ export default function CoursesListView (){
     const history = useHistory()
     useEffect(() => {
     axios({
-        url: 'localhost:8080/headOfDepartment/viewAllCourses',
+        url: 'http://localhost:8080/headOfDepartment/viewAllCourses',
         method: 'POST',
         headers: {
          token: token,

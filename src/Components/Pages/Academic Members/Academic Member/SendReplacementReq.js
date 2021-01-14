@@ -21,9 +21,12 @@ export default function SendReplacementReq(){
       }
 
     const handleSubmit = (event) =>{
+      if( receiverId === "", dateToBeRequested ==="", slotId === ""){
+         alert("one of the inputs is missing")
+       }
         axios({
-          url: 'localhost:8080/academicMember/replacementReq',
-          method: 'POST',
+          url: 'http://localhost:8080/academicMember/replacementReq',
+          method: 'GET',
           headers: {
             token: token,
           },

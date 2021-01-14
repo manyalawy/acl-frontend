@@ -16,8 +16,8 @@ export default function ViewDayOffAll() {
   const token = localStorage.getItem("user");
   useEffect(() => {  
         axios({
-          url: 'localhost:8080/headOfDepartment/viewDayOffAll',
-          method: 'POST',
+          url: 'http://localhost:8080/headOfDepartment/viewDayOffAll',
+          method: 'GET',
           headers: {
             token: token,
           },
@@ -32,7 +32,7 @@ export default function ViewDayOffAll() {
           .catch((error) => {
             console.log(error)
           }) 
-    });
+    },[]);
 
     return(
       <div style={{ marginTop:'2vw'}}>

@@ -7,8 +7,8 @@ export default function CancelPending(){
     const token = localStorage.getItem("user");
     const cancelReq = (event) =>{
         axios({
-          url: 'localhost:8080/academicMember/cancelReq',
-          method: 'POST',
+          url: 'http://localhost:8080/academicMember/cancelReq',
+          method: 'DELETE',
           headers: {
             token: token,
           },

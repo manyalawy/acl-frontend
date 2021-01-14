@@ -13,13 +13,13 @@ export default function ViewCoverage() {
 
   useEffect(() => {
     axios({
-      url:'localhost:8080/courseInstructor/viewCourseCoverage ' ,
+      url:'http://localhost:8080/courseInstructor/viewCourseCoverage ' ,
       method: 'POST',
       headers: {
         token: token,
       },
       data: {
-        academicMemberID:"ac44", 
+        academicMemberID:"ac-5", 
         status:"assigned" 
       },
     })
@@ -28,7 +28,7 @@ export default function ViewCoverage() {
         setCoverage(res)
       })
       .catch((error) => {
-        console.log(error)    
+        console.log(error.msg)    
       }) 
   }, [])
 
@@ -43,7 +43,7 @@ export default function ViewCoverage() {
       </td>
       <td>
    <text style={{marginTop:'3vw', marginLeft:'0.7vw', fontWeight:'bold', fontSize:'1vw', color:'red'}}>
-   {coverage} 2.7
+   {/*coverage*/} 2.7
    </text> 
    </td>
    </tr>

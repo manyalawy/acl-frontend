@@ -19,8 +19,11 @@ export default function SlotLinkingReq(){
       }
 
     const handleSubmit = (event) =>{
+      if(dateToBeRequested ==="", slotId === ""){
+        alert("one of the inputs is missing")
+      }
         axios({
-          url: 'localhost:8080/academicMember/slotLinkingReq ',
+          url: 'http//localhost:8080/academicMember/slotLinkingReq',
           method: 'POST',
           headers: {
             token: token,

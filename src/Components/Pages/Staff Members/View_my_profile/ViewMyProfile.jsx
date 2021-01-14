@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "#ff0f0f",
     },
   },
-}));
+})); 
 const token = localStorage.getItem("user");
 
 const ViewMyProfile = () => {

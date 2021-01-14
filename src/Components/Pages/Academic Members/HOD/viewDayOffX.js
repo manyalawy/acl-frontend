@@ -5,13 +5,13 @@ export default function ViewDayOffX() {
   const token = localStorage.getItem("user");
   useEffect(() => {  
         axios({
-          url: 'localhost:8080/headOfDepartment/viewDayOffX',
-          method: 'POST',
+          url: 'http://localhost:8080/headOfDepartment/viewDayOffX',
+          method: 'GET',
           headers: {
             token: token,
           },
           data: {
-            id: "ac-5"
+            staff_id: "ac-5"
           },
         })
           .then((res) => {
@@ -19,9 +19,9 @@ export default function ViewDayOffX() {
             setDayOffX(res)
           })
           .catch((error) => {
-            console.log(error)
+            console.log(error.msg)
           }) 
-    });
+    },[]);
 
   return (
     <div>

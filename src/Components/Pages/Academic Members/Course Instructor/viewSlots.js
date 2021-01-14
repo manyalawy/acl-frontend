@@ -14,7 +14,7 @@ export default function ViewSlots() {
   useEffect(() => {
     // if (!dispatch(checkTokenExpired(history))) {
     axios({
-      url:'localhost:8080/courseInstructor/viewSlotsAssignment' ,
+      url:'http://localhost:8080/courseInstructor/viewSlotsAssignment' ,
       method: 'POST',
       headers: {
        token: token,
@@ -26,10 +26,15 @@ export default function ViewSlots() {
       .then((res) => {
         console.log(res)
         setSlots(res)
+        if (res.data.error) {
+          alert(res.data.error);
+        } else {
+          alert(res.data.msg);
+        }      
       
       })
       .catch((error) => {
-        console.log(error)
+        console.log(error.msg)
       })
     // }
   }, [])

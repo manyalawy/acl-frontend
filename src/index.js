@@ -1,5 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom";
+
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Login from "./Components/Pages/Staff Members/Login/Login";
@@ -18,7 +19,7 @@ import coursesCI from "./Components/Pages/Academic Members/Course Instructor/cou
 
 import CoursesListView from "./Components/List Views HOD/coursesListView";
 import InstructorsListViewPerDep from "./Components/List Views HOD/InstructorsListViewPerDep";
-import  ButtonsPageHod from "./Components/List Views HOD/buttonsPageHod";
+import  ButtonsPageHod from "./Components/List Views HOD/buttonsPageHOD";
 import InstructorsListViewPerCourse from './Components/List Views HOD/InstructorsListViewPerCourse'
 import ButtonsPageHod2 from "./Components/List Views HOD/buttonsPageHOD2";
 import viewAllReq from './Components/Pages/Academic Members/HOD/viewAllReq'
@@ -48,6 +49,7 @@ import isAuth from "./Services/isAuth";
 import { SlotLinkingRequests } from "./Components/Pages/Academic Members/Course Coordinator/SlotLinkingRequests";
 import { CourseSlots } from "./Components/Pages/Academic Members/Course Coordinator/CourseSlots";
 import StaffAttendance from "./Components/Pages/HR Members/View Staff Member Attendance/StaffAttendance";
+import ViewCoverage from "./Components/Pages/Academic Members/Course Instructor/viewCoverage";
 ReactDOM.render(
   <Router>
    <HODNav/>
@@ -74,7 +76,7 @@ ReactDOM.render(
     <Route path="/viewDayOffX" exact component={ViewDayOffX} />
     <Route path="/acceptReject" exact component={acceptRejectReq} />
     <Route path="/viewCoverageHOD" exact component={ViewCoverageHOD} />
-
+    <Route path="/viewCov" exact component={ViewCoverage} />
     <Route path="/viewAttendanceRecord" exact component={ViewAttendanceRecord} />
     <Route path="/InstructorsListViewPerCourse" exact component={InstructorsListViewPerCourse} />
     <Route path="/buttonsPageHod2" exact component={ButtonsPageHod2} />

@@ -4,10 +4,11 @@ import axios from 'axios'
 import {useHistory} from 'react-router'
 
 export default function ViewReplacementReq() {
-  const [requests, setRequests]= useState('')
+  const [requests, setRequests]= useState([])
   const [status, setStatus]= useState('')
   const [senderId, setSenderId]= useState('')
-  const [receiverId, setReceiverId]= useState('')
+  const [slotId, setSlotId]= useState('')
+  const [type, setType]= useState('')
   const [dateToBeReq, setDateToBeReq]= useState('')
 
   const history = useHistory()
@@ -35,26 +36,27 @@ export default function ViewReplacementReq() {
   const token = localStorage.getItem("user");
   useEffect(() => {  
         axios({
-          url: 'localhost:8080/academicMember/viewReplacementReq',
+          url: 'http://localhost:8080/academicMember/viewReplacementReq',
           method: 'GET',
           headers: {
             token: token,
           },
         })
           .then((res) => {
-            console.log(res) 
-            setRequests({
-                status: res.status,
-                senderId: res.sender_id ,
-                receiverId: res.receiver_id,
-                dateToBeReq: res.date_to_be_req,
-              
-            })
-          })
+                console.log(res) 
+                setRequests(res.data)
+                //setDateToBeReq(res.data.date_to_be_requested),
+                //setSenderId(res.data.sender_id) ,
+                // setStatus(res.data.status),
+                // 
+                // setType(res.data.type),
+                // 
+                // setSlotId(res.data.slot_id)
+           })
           .catch((error) => {
             console.log(error)
           }) 
-    });
+    },[]);
 
     return(
       <div style={{ marginTop:'2vw'}}>
@@ -71,32 +73,38 @@ export default function ViewReplacementReq() {
           <tr> 
               <td>
                 
-               <Card style={{width:'50vw', height:'8vw', borderWidth:'0.2vw', borderColor:'#a9a9a9'}}>
+               <Card style={{width:'50vw', height:'9vw', borderWidth:'0.2vw', borderColor:'#a9a9a9'}}>
             
 
                      <tr>
                       <td>
                      <text style={{marginLeft:'2vw', fontWeight:'bold', fontSize:'1vw'}}> status: </text></td>
                      <td>
-                     <text style={{marginLeft:'2vw', fontWeight:'bold', fontSize:'1vw', color:'red'}}> {status} pending </text></td>
+                     <text style={{marginLeft:'2vw', fontWeight:'bold', fontSize:'1vw', color:'red'}}> {requests.status} </text></td>
                      </tr>
                      <tr>
                      <td>
                      <text style={{marginLeft:'2vw', fontWeight:'bold', fontSize:'1vw'}}> sender id: </text></td>
                     <td>
-                     <text style={{marginLeft:'2vw', fontWeight:'bold', fontSize:'1vw', color:'red'}}> {senderId} absde</text></td>
+                     <text style={{marginLeft:'2vw', fontWeight:'bold', fontSize:'1vw', color:'red'}}> {requests.sender_id} </text></td>
                      </tr>
                      <tr>
                      <td>
-                     <text style={{marginLeft:'2vw', fontWeight:'bold', fontSize:'1vw'}}> receiver id: </text></td>
+                     <text style={{marginLeft:'2vw', fontWeight:'bold', fontSize:'1vw'}}> type: </text></td>
                     <td>
-                     <text style={{marginLeft:'2vw', fontWeight:'bold', fontSize:'1vw', color:'red'}}> {receiverId} 21424r2feave  </text></td>
+                     <text style={{marginLeft:'2vw', fontWeight:'bold', fontSize:'1vw', color:'red'}}> {requests.type}   </text></td>
                      </tr>
                      <tr>
                      <td>
                      <text style={{marginLeft:'2vw', fontWeight:'bold', fontSize:'1vw'}}> date to be requested:</text></td>
                     <td>
-                     <text style={{marginLeft:'2vw', fontWeight:'bold', fontSize:'1vw', color:'red'}}> {dateToBeReq}  12/5/2020  </text></td>
+                     <text style={{marginLeft:'2vw', fontWeight:'bold', fontSize:'1vw', color:'red'}}> {requests.date_to_be_requested}  </text></td>
+                     </tr>
+                     <tr>
+                     <td>
+                     <text style={{marginLeft:'2vw', fontWeight:'bold', fontSize:'1vw'}}> slot id:</text></td>
+                    <td>
+                     <text style={{marginLeft:'2vw', fontWeight:'bold', fontSize:'1vw', color:'red'}}> {requests.slot_id}  </text></td>
                      </tr>
                
                  

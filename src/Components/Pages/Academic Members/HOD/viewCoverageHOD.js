@@ -13,21 +13,27 @@ export default function ViewCoverageHOD() {
 
   useEffect(() => {
     axios({
-      url:'localhost:8080/headOfDepartment/viewCoverage' ,
-      method: 'POST',
+      url:'http://localhost:8080/headOfDepartment/viewCoverage' ,
+      method: 'GET',
       headers: {
        token: token,
       },
       data: {
-     course_name:"math" 
+     course_name:"bio" 
       },
     })
       .then((res) => {
         console.log(res)
         setCoverage(res)
+        if (res.data.error) {
+          alert(res.data.error);
+        } else {
+          alert(res.data.msg);
+        }
       })
       .catch((error) => {
-        console.log(error)    
+        console.log(error) 
+      
       }) 
   }, [])
 

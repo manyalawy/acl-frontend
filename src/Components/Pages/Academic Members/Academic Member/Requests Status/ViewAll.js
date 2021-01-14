@@ -14,7 +14,7 @@ export default function ViewAll() {
   const token = localStorage.getItem("user");
   useEffect(() => {  
         axios({
-          url: 'localhost:8080/academicMember/viewReqStatus',
+          url: 'http://localhost:8080/academicMember/viewReqStatus',
           method: 'GET',
           headers: {
             token: token,
@@ -27,7 +27,7 @@ export default function ViewAll() {
           .catch((error) => {
             console.log(error)
           }) 
-    });
+    },[]);
 
     return(
       <div style={{ marginTop:'2vw'}}>

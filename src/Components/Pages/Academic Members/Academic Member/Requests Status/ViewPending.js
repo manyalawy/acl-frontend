@@ -11,7 +11,7 @@ export default function ViewPending() {
   const token = localStorage.getItem("user");
   useEffect(() => {  
         axios({
-          url: 'localhost:8080/academicMember/viewPendingReq',
+          url: 'http://localhost:8080/academicMember/viewPendingReq',
           method: 'GET',
           headers: {
             token: token,
@@ -24,11 +24,11 @@ export default function ViewPending() {
           .catch((error) => {
             console.log(error)
           }) 
-    });
+    },[]);
     const cancelReq = (event) =>{
       axios({
         url: 'localhost:8080/academicMember/cancelReq',
-        method: 'POST',
+        method: 'DELETE',
         headers: {
           token: token,
         },

@@ -21,8 +21,11 @@ export default function CompensationLeave(){
       }
 
     const handleSubmit = (event) =>{
+      if ( dayAbsent === "" || reason === "" || dayComp === "") {
+        alert("One of the inputs is missing");
+      }
         axios({
-          url: 'localhost:8080/academicMember/compLeaveReq',
+          url: 'http://localhost:8080/academicMember/compLeaveReq',
           method: 'POST',
           headers: {
             token: token,

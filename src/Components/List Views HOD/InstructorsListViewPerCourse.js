@@ -17,18 +17,23 @@ export default function InstructorsListViewPerCourse (){
     }
     useEffect(() => {
     axios({
-        url: 'localhost:8080/headOfDepartment/viewStaffCourse',
-        method: 'POST',
+        url: 'http://localhost:8080/headOfDepartment/viewStaffCourse',
+        method: 'GET',
         headers: {
           token: token,
         },
         data: {
-          course_name: "csen701"
+          course_name: "bio"
         },
       })
         .then((res) => {
           console.log(res) 
           setInstructors(res)
+          if (res.data.error) {
+            alert(res.data.error);
+          } else {
+            alert(res.data.msg);
+          }
         })
         .catch((error) => {
           console.log(error)

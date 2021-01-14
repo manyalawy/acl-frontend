@@ -14,21 +14,19 @@ export default function ViewTeachingAssigments() {
   const token = localStorage.getItem("user");
   useEffect(() => {  
         axios({
-          url: 'localhost:8080/headOfDepartment/viewAssignments',
-          method: 'POST',
+          url: 'http://localhost:8080/headOfDepartment/viewAssignments',
+          method: 'GET',
           headers: {
             token: token,
           },
-          data: {
-            id: "ac-5"
-          },
+      
         })
           .then((response) => {
             console.log(response) 
             setTeachingAssignments(response.data)
           })
           .catch((error) => {
-            console.log(error)
+            console.log(error.msg)
           }) 
     },[]);
 

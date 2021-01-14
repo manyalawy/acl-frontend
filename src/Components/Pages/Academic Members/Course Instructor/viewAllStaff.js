@@ -13,7 +13,7 @@ export default function ViewAllStaff (props){
 
     useEffect(() => {
     axios({
-        url: 'localhost:8080/courseInstructor/viewAllStaff',
+        url: 'http://localhost:8080/courseInstructor/viewAllStaff',
         method: 'POST',
         headers: {
           token: token,

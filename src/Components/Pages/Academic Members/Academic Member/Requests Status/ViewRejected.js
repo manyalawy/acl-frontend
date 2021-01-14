@@ -10,7 +10,7 @@ export default function ViewRejected() {
   const token = localStorage.getItem("user");
   useEffect(() => {  
         axios({
-          url: 'localhost:8080/academicMember/viewRejectedReq ',
+          url: 'http://localhost:8080/academicMember/viewRejectedReq ',
           method: 'GET',
           headers: {
             token: token,
@@ -23,7 +23,7 @@ export default function ViewRejected() {
           .catch((error) => {
             console.log(error)
           }) 
-    });
+    },[]);
 
     return(
       <div style={{ marginTop:'2vw'}}>
