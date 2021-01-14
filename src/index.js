@@ -21,31 +21,19 @@ import DeleteStaff from "./Components/Pages/HR Members/DeleteUser";
 import UpdateStaff from "./Components/Pages/HR Members/UpdateUser";
 import StaffAttendance from "./Components/Pages/HR Members/StaffAttendance";
 import UpdateSalary from "./Components/Pages/HR Members/UpdateSalary";
-import viewCoverage from "./Components/Pages/Academic Members/Course Instructor/viewCoverage";
-import viewAllStaff from "./Components/Pages/Academic Members/Course Instructor/viewAllStaff";
-import CoursesListView from "./Components/List Views HOD/coursesListView";
-// import InstructorsListView from "./Components/List Views/InstructorsListViewPerCourse";
-import isAuth from "./Services/isAuth";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import HRNav from "./Components/NavBars/hrNav";
 import HODNav from "./Components/NavBars/hodNav";
-import { SlotLinkingRequests } from "./Components/Pages/Academic Members/Course Coordinator/SlotLinkingRequests";
-import { CourseSlots } from "./Components/Pages/Academic Members/Course Coordinator/CourseSlots";
-import SendDayOffRequest from "./Components/Pages/Academic Members/Academic Member/Change Day Off Request/ChangeDayOff";
 import ProtectedRoute from "./Services/ProtectedRoute";
-import UpdateUser from "./Components/Pages/HR Members/UpdateUser";
-// import UpdateDepartment from "./Components/Pages/HR Members/View Staff Member Attendance/UpdateDepartment";
 
 ReactDOM.render(
   <Router>
     <HRNav />
     {/* Staff members routes */}
     <Route path="/login" exact component={Login} />
-    <ProtectedRoute path="/changeDayOff" exact component={SendDayOffRequest} />
     <ProtectedRoute path="/" exact component={ViewMyProfile} />
     <ProtectedRoute path="/resetPassword" exact component={ResetPassowrd} />
     <ProtectedRoute path="/attendance" exact component={ViewAttendance} />
-    <ProtectedRoute path="/courseSlots" exact component={CourseSlots} />
 
     {/* HR members */}
     <ProtectedRoute path="/addLocation" exact component={AddLocation} />
