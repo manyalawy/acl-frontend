@@ -49,10 +49,10 @@ import isAuth from "./Services/isAuth";
 import { SlotLinkingRequests } from "./Components/Pages/Academic Members/Course Coordinator/SlotLinkingRequests";
 import { CourseSlots } from "./Components/Pages/Academic Members/Course Coordinator/CourseSlots";
 import StaffAttendance from "./Components/Pages/HR Members/View Staff Member Attendance/StaffAttendance";
-
+import CCNav from './Components/NavBars/ccNav'
 ReactDOM.render(
   <Router>
-   <HODNav/>
+   <CCNav/>
     <Route path="/login" exact component={Login} />
     <Route path="/" exact component={ViewMyProfile} />
     <Route path="/resetPassword" exact component={ResetPassowrd} />

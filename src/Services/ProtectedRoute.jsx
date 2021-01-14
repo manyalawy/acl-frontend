@@ -10,9 +10,11 @@ function ProtectedRoute({ component: Component, ...rest }) {
         if (isAuth()) {
           return <Component />;
         } else {
+          return(
           <Redirect
             to={{ pathname: "/login", state: { from: props.location } }}
-          />;
+          />
+          );
         }
       }}
     />
