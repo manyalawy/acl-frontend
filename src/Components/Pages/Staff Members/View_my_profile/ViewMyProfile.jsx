@@ -25,10 +25,13 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "#ff0f0f",
     },
   },
-})); 
-const token = localStorage.getItem("user");
+
+}));
+
+
 
 const ViewMyProfile = () => {
+  const token = localStorage.getItem("user");
   const decoded = jwt_decoded(token);
   const [data, setData] = useState("");
   const [openModal, setOpenModal] = React.useState(false);
@@ -74,13 +77,16 @@ const ViewMyProfile = () => {
         if (response.data.error) {
           alert(response.data.error);
         } else {
+
           alert(response.data);
+
         }
       })
       .catch((error) => {
         alert(error.message);
       });
   };
+
 
   const handleSignout = () => {
     axios
@@ -180,5 +186,6 @@ const ViewMyProfile = () => {
     </div>
   );
 };
+
 
 export default ViewMyProfile;
