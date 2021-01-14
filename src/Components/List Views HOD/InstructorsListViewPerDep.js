@@ -49,7 +49,7 @@ export default function InstructorsListViewPerDep (){
                 <tr>
                    <td>
                      <text style={{marginLeft:'2vw', fontWeight:'bold', fontSize:'1vw'}}> {index+1} </text></td>
-                   <td> &nbsp; &nbsp; &nbsp;<text style={{fontSize:'1vw',color:'#8b0000 '}}> {instructors1[index]} </text> </td>
+                   <td> &nbsp; &nbsp; &nbsp;<text style={{fontSize:'1vw',color:'#8b0000 '}}> {instructors[index]} </text> </td>
                 </tr>
                </Card>
                </button>

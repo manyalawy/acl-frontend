@@ -27,8 +27,8 @@ export default function InstructorsListViewPerCourse (){
         },
       })
         .then((res) => {
-          console.log(res) 
-          setInstructors(res)
+          console.log(res.data) 
+          setInstructors(res.data)
           if (res.data.error) {
             alert(res.data.error);
           } else {
@@ -36,7 +36,7 @@ export default function InstructorsListViewPerCourse (){
           }
         })
         .catch((error) => {
-          console.log(error)
+          console.log(error.msg)
         })   
     });
 
@@ -54,7 +54,8 @@ export default function InstructorsListViewPerCourse (){
          View Course Coverage
     </button>*/}
        <div>
-         <ViewCoverageHOD/>
+         <ViewCoverageHOD
+         courseName="bio"/>
        </div>
 
      </div>

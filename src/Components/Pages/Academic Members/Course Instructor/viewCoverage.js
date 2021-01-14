@@ -13,7 +13,7 @@ export default function ViewCoverage() {
 
   useEffect(() => {
     axios({
-      url:'http://localhost:8080/courseInstructor/viewCourseCoverage ' ,
+      url:'http://localhost:8080/courseInstructor/viewCourseCoverage' ,
       method: 'POST',
       headers: {
         token: token,

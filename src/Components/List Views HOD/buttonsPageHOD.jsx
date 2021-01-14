@@ -4,7 +4,7 @@ import React, {useState, useEffect} from 'react'
 export default function ButtonsPageHod (){
 
   const axios = require("axios").default;
-   const token = localStorage.getItem("user");
+  const token = localStorage.getItem("user");
  // const token = useSelector((state) => state.token)
 
     const assignInst = () =>{
@@ -81,7 +81,7 @@ export default function ButtonsPageHod (){
       const unassignInst = (id) => {
         console.log(id);
         axios
-          .delete("http://localhost:8080/headOfDepartment/unassignIns", {
+          .post("http://localhost:8080/headOfDepartment/unassignInst", {
             headers: { token: token },
             data: { id:'ac-5' },
           })
@@ -103,8 +103,8 @@ export default function ButtonsPageHod (){
             token: token,
           },
           data: {
-            id: "ac4", 
-            courseName:"mecha" 
+            id: "ac-5", 
+            course_name:"bio" 
           },
         })
           .then((res) => {

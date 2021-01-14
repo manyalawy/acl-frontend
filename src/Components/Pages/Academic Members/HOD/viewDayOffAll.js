@@ -52,8 +52,8 @@ export default function ViewDayOffAll() {
                <Card style={{width:'50vw', height:'3vw', borderWidth:'0.2vw', borderColor:'#a9a9a9'}}>
                 <tr>
                    <td>
-                     <text style={{marginLeft:'2vw', fontWeight:'bold', fontSize:'1vw'}}> ID: {dayOffAll1[index][index+1]} </text></td>
-                   <td> &nbsp; &nbsp; &nbsp;<text style={{fontSize:'1vw', fontWeight:'bold',}}> Day: {dayOffAll1[index][index+1]} </text> </td>
+                     <text style={{marginLeft:'2vw', fontWeight:'bold', fontSize:'1vw'}}> ID: {dayOffAll.id} </text></td>
+                   <td> &nbsp; &nbsp; &nbsp;<text style={{fontSize:'1vw', fontWeight:'bold', marginLeft:'18vw'}}> Day: {dayOffAll.day} </text> </td>
                 </tr>
                </Card>
    

@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card'
 //import { useDispatch, useSelector } from 'react-redux'
 //import { useHistory } from 'react-router'
 
-export default function ViewCoverageHOD() {
+export default function ViewCoverageHOD(props) {
   //const id = useSelector((state) => state.id)
   //const dispatch = useDispatch()
   //const history = useHistory()
@@ -19,7 +19,7 @@ export default function ViewCoverageHOD() {
        token: token,
       },
       data: {
-     course_name:"bio" 
+     course_name: props.courseName
       },
     })
       .then((res) => {
@@ -48,7 +48,7 @@ export default function ViewCoverageHOD() {
       </td>
       <td>
    <text style={{marginTop:'3vw', marginLeft:'0.7vw', fontSize:'1vw', fontColor:'red'}}>
-   {coverage} 29
+   {coverage} 
    </text> 
    </td>
    </tr>

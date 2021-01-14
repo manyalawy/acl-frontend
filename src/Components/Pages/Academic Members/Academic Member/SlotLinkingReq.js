@@ -42,13 +42,15 @@ export default function SlotLinkingReq(){
       }
     return(
         <div style={{marginTop:'2vw'}}>
-            <h style={{marginLeft:'1vw',fontSize:'1.5vw',fontWeight:'bold'}}>
+            <text style={{marginLeft:'1vw',fontSize:'1.5vw',fontWeight:'bold', marginTop:'2vw'}}>
               Slot Linking Request
-            </h>
+            </text>
+         
             <Form style={{marginLeft:'1vw', marginTop:'2vw'}}
             noValidate
             validated={validated}
             onSubmit={handleSubmit}>
+                 <table>
                 <Form.Group>
                     
                     <tr>
@@ -75,7 +77,7 @@ export default function SlotLinkingReq(){
                     &nbsp;
                     <td>
                     <Form.Control style={{marginBottom:'1vw'}}
-                    value={dateToBeRequested}
+                    value={slotId}
                     onChange={handleSlotId}
                     required>    
                     </Form.Control>
@@ -88,8 +90,9 @@ export default function SlotLinkingReq(){
                 onClick={handleSubmit}>
                  Submit
                 </Button>
+                </table>
             </Form>
-
+          
         </div>
     )
 }

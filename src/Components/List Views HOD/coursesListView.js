@@ -19,10 +19,10 @@ export default function CoursesListView (){
       })
         .then((res) => {
           console.log(res) 
-          setCourses(res.data)
+          setCourses(res.data.courses)
         })
         .catch((error) => {
-          console.log(error)
+          console.log(error.msg)
         })   
     },[]);
 
@@ -50,7 +50,7 @@ export default function CoursesListView (){
               <tr>
                  <td>
                    <text style={{marginLeft:'2vw', fontWeight:'bold', fontSize:'1vw'}}> {index+1} </text></td>
-                 <td> &nbsp; &nbsp; &nbsp;<text style={{fontSize:'1vw',color:'#8b0000 '}}> {course1[index]} </text> </td>
+                 <td> &nbsp; &nbsp; &nbsp;<text style={{fontSize:'1vw',color:'#8b0000 '}}> {courses[index]} </text> </td>
               </tr>
              </Card>
              </button>

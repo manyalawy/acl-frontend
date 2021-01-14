@@ -12,9 +12,9 @@ import CINav from "./Components/NavBars/ciNav";
 import HODNav from "./Components/NavBars/hodNav";
 
 import viewSlotsAssignment from "./Components/Pages/Academic Members/Course Instructor/viewSlots";
-import viewCoverage from "./Components/Pages/Academic Members/Course Instructor/viewCoverage";
-import viewAllStaff from "./Components/Pages/Academic Members/Course Instructor/viewAllStaff";
-import buttonsPage from "./Components/Pages/Academic Members/Course Instructor/buttonsPage";
+import ViewCoverage from "./Components/Pages/Academic Members/Course Instructor/viewCoverage";
+import ViewAllStaff from "./Components/Pages/Academic Members/Course Instructor/viewAllStaff";
+import ButtonsPage from "./Components/Pages/Academic Members/Course Instructor/buttonsPage";
 import coursesCI from "./Components/Pages/Academic Members/Course Instructor/coursesCI";
 
 import CoursesListView from "./Components/List Views HOD/coursesListView";
@@ -26,7 +26,7 @@ import viewAllReq from './Components/Pages/Academic Members/HOD/viewAllReq'
 import viewTeachingAssignments from './Components/Pages/Academic Members/HOD/viewTeachingAssignments'
 import ViewDayOffAll from "./Components/Pages/Academic Members/HOD/viewDayOffAll";
 import ViewDayOffX from "./Components/Pages/Academic Members/HOD/viewDayOffX";
-import acceptRejectReq from "./Components/Pages/Academic Members/HOD/acceptRejectReq";
+import AcceptRejectReq from "./Components/Pages/Academic Members/HOD/acceptRejectReq";
 import ViewCoverageHOD from "./Components/Pages/Academic Members/HOD/viewCoverageHOD";
 import ViewAttendance from "./Components/Pages/Staff Members/View Attendance/ViewAttendance";
 import ViewAttendanceRecord from './Components/Pages/HR Members/viewAttendanceRecord'
@@ -42,14 +42,14 @@ import ViewPending from './Components/Pages/Academic Members/Academic Member/Req
 import viewRejected from './Components/Pages/Academic Members/Academic Member/Requests Status/ViewRejected'
 import ViewSchedule from "./Components/Pages/Academic Members/Academic Member/ViewSchedule";
 import SendReplacementReq from "./Components/Pages/Academic Members/Academic Member/SendReplacementReq";
-import viewReplacementReq from "./Components/Pages/Academic Members/Academic Member/ViewReplacementReq";
-import slotLinkingReq from "./Components/Pages/Academic Members/Academic Member/SlotLinkingReq";
+import ViewReplacementReq from "./Components/Pages/Academic Members/Academic Member/ViewReplacementReq";
+import SlotLinkingReq from "./Components/Pages/Academic Members/Academic Member/SlotLinkingReq";
 import changeDayOff from "./Components/Pages/Academic Members/Academic Member/ChangeDayOff";
 import isAuth from "./Services/isAuth";
 import { SlotLinkingRequests } from "./Components/Pages/Academic Members/Course Coordinator/SlotLinkingRequests";
 import { CourseSlots } from "./Components/Pages/Academic Members/Course Coordinator/CourseSlots";
 import StaffAttendance from "./Components/Pages/HR Members/View Staff Member Attendance/StaffAttendance";
-import ViewCoverage from "./Components/Pages/Academic Members/Course Instructor/viewCoverage";
+
 ReactDOM.render(
   <Router>
    <HODNav/>
@@ -60,10 +60,10 @@ ReactDOM.render(
     <Route path="/courseSlots" exact component={CourseSlots} />
     <Route path="/slotLinkingRequests" exact component={SlotLinkingRequests} />
     <Route path="/staffAttendance" exac component={StaffAttendance} />
-    <Route path="/login/CI/viewCoverage" exact component={viewCoverage} />
+    <Route path="/login/CI/viewCoverage" exact component={ViewCoverage} />
     <Route path="/login/CI/viewSlotsAssignment" exact component={viewSlotsAssignment} />
-    <Route path="/login/CI/viewAllStaff" exact component={viewAllStaff} />
-    <Route path="/login/CI/buttonsPage" exact component={buttonsPage} />
+    <Route path="/login/CI/viewAllStaff" exact component={ViewAllStaff} />
+    <Route path="/login/CI/buttonsPage" exact component={ButtonsPage} />
     <Route path="/login/CI/coursesCI" exact component={coursesCI} />
 
     <Route path="/coursesListView" exact component={CoursesListView} />
@@ -74,10 +74,10 @@ ReactDOM.render(
     <Route path="/viewTeachingAssignments" exact component={viewTeachingAssignments} />
     <Route path="/viewDayOffAll" exact component={ViewDayOffAll} />
     <Route path="/viewDayOffX" exact component={ViewDayOffX} />
-    <Route path="/acceptReject" exact component={acceptRejectReq} />
+    <Route path="/acceptReject" exact component={AcceptRejectReq} />
     <Route path="/viewCoverageHOD" exact component={ViewCoverageHOD} />
     <Route path="/viewCov" exact component={ViewCoverage} />
-    <Route path="/viewAttendanceRecord" exact component={ViewAttendanceRecord} />
+
     <Route path="/InstructorsListViewPerCourse" exact component={InstructorsListViewPerCourse} />
     <Route path="/buttonsPageHod2" exact component={ButtonsPageHod2} />
     <Route path="/compensationLeave" exact component={CompensationLeave} />
@@ -90,8 +90,8 @@ ReactDOM.render(
     <Route path="/viewPending" exact component={ViewPending} />
     <Route path="/viewRejected" exact component={viewRejected} />
     <Route path="/sendReplacementReq" exact component={SendReplacementReq} />
-    <Route path="/viewReplacementReq" exact component={viewReplacementReq} />
-    <Route path="/slotLinkingReq" exact component={slotLinkingReq} />
+    <Route path="/viewReplacementReq" exact component={ViewReplacementReq} />
+    <Route path="/SlotLinkingReq" exact component={SlotLinkingReq} />
     <Route path="/viewSchedule" exact component={ViewSchedule} />
     <Route path="/changeDayOff" exact component={changeDayOff} />
   </Router>,
