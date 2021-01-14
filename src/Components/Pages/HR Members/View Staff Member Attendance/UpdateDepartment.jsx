@@ -10,27 +10,34 @@ import {
   StyleSheet,
   ButtonGroup,
 } from "react-bootstrap";
-const token = localStorage.getItem("user");
-const decoded = jwt_decoded(token);
 
 const axios = require("axios").default;
 const UpdateDepartment = () => {
+  const token = localStorage.getItem("user");
+  const decoded = jwt_decoded(token);
   const [name, setname] = useState("");
   const [newname, setnew] = useState("");
   const [Faculty, setFaculty] = useState("");
   const [hod, sethod] = useState("");
+
+  const data = {};
+  if (name.length != 0) {
+    data.name = name;
+  }
+  if (newname.length != 0) {
+    data.newname = newname;
+  }
+  if (Faculty.length != 0) {
+    data.Faculty = Faculty;
+  }
+  if (hod.length != 0) {
+    data.hod = hod;
+  }
   const handle_update = () => {
     axios
-      .post(
-        "http://localhost:8080/hrMember/UpdateDepartment",
-        {
-          name: name,
-          newname: newname,
-          Faculty: Faculty,
-          hod: hod,
-        },
-        { headers: { token: token } }
-      )
+      .post("http://localhost:8080/hrMember/UpdateDepartment", data, {
+        headers: { token: token },
+      })
       .then((response) => {
         if (response.data.error) {
           alert(response.data.error);
