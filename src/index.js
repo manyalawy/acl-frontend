@@ -56,10 +56,8 @@ import changeDayOff from "./Components/Pages/Academic Members/Academic Member/Ch
 import isAuth from "./Services/isAuth";
 import { SlotLinkingRequests } from "./Components/Pages/Academic Members/Course Coordinator/SlotLinkingRequests";
 import { CourseSlots } from "./Components/Pages/Academic Members/Course Coordinator/CourseSlots";
-import Login from "./Components/Pages/Staff Members/Login/Login";
-import ViewMyProfile from "./Components/Pages/Staff Members/View_my_profile/ViewMyProfile";
-import ResetPassowrd from "./Components/Pages/Staff Members/Reset password/ResetPassowrd";
-import ViewAttendance from "./Components/Pages/Staff Members/View Attendance/ViewAttendance";
+
+//HR 
 import AddLocation from "./Components/Pages/HR Members/AddLocation";
 import DeleteLocation from "./Components/Pages/HR Members/DeleteLocation";
 import UpdateLocation from "./Components/Pages/HR Members/UpdateLocation";
@@ -77,14 +75,13 @@ import DeleteStaff from "./Components/Pages/HR Members/DeleteUser";
 import UpdateStaff from "./Components/Pages/HR Members/UpdateUser";
 import StaffAttendance from "./Components/Pages/HR Members/StaffAttendance";
 import UpdateSalary from "./Components/Pages/HR Members/UpdateSalary";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import HRNav from "./Components/NavBars/hrNav";
-import HODNav from "./Components/NavBars/hodNav";
-import ProtectedRoute from "./Services/ProtectedRoute";
+
+
+
 
 ReactDOM.render(
   <Router>
-    <HRNav />
+    <HODNav />
     {/* Staff members routes */}
     <Route path="/login" exact component={Login} />
     <ProtectedRoute path="/" exact component={ViewMyProfile} />
