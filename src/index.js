@@ -5,7 +5,7 @@ import ViewMyProfile from "./Components/Pages/Staff Members/View_my_profile/View
 import ResetPassowrd from "./Components/Pages/Staff Members/Reset password/ResetPassowrd";
 import ViewAttendance from "./Components/Pages/Staff Members/View Attendance/ViewAttendance";
 // import courseInstructorFP from "./Components/Pages/Academic Members/Course Instructor/courseInstructorFP";
-import viewSlotsAssignment from "./Components/Pages/Academic Members/Course Instructor/viewSlots";
+// import viewSlotsAssignment from "./Components/Pages/Academic Members/Course Instructor/viewSlots";
 import viewCoverage from "./Components/Pages/Academic Members/Course Instructor/viewCoverage";
 import viewAllStaff from "./Components/Pages/Academic Members/Course Instructor/viewAllStaff";
 import CoursesListView from "./Components/List Views HOD/coursesListView";
@@ -19,21 +19,20 @@ import { CourseSlots } from "./Components/Pages/Academic Members/Course Coordina
 import SendDayOffRequest from "./Components/Pages/Academic Members/Academic Member/Change Day Off Request/ChangeDayOff";
 import StaffAttendance from "./Components/Pages/HR Members/View Staff Member Attendance/StaffAttendance";
 import ProtectedRoute from "./Services/ProtectedRoute";
+import UpdateUser from "./Components/Pages/HR Members/View Staff Member Attendance/UpdateUser";
+// import UpdateDepartment from "./Components/Pages/HR Members/View Staff Member Attendance/UpdateDepartment";
 
 ReactDOM.render(
   <Router>
     <HODNav />
     <Route path="/login" exact component={Login} />
     <ProtectedRoute path="/changeDayOff" exact component={SendDayOffRequest} />
+    {/* <ProtectedRoute path="/updatedep" exact component={UpdateDepartment} /> */}
     <ProtectedRoute path="/" exact component={ViewMyProfile} />
     <ProtectedRoute path="/resetPassword" exact component={ResetPassowrd} />
     <ProtectedRoute path="/attendance" exact component={ViewAttendance} />
     <ProtectedRoute path="/courseSlots" exact component={CourseSlots} />
-    <ProtectedRoute
-      path="/login/CI/viewSlotsAssignment"
-      exact
-      component={viewSlotsAssignment}
-    />
+    <ProtectedRoute path="/update/user" exact component={UpdateUser} />
     <ProtectedRoute
       path="/login/CI/viewAllStaff"
       exact
