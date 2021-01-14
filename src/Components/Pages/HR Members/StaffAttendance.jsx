@@ -198,4 +198,4 @@ function createData(sign_in, sign_out) {
   return { sign_in, sign_out };
 }
 
-export default withRouter(StaffAttendance);
+export default StaffAttendance;
