@@ -2,6 +2,7 @@ import React from "react";
 import { Nav, Navbar, NavDropdown, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {useHistory} from 'react-router'
+import { Link} from "react-router-dom";
 
 const HODNav = () => {
   const history = useHistory()
@@ -69,16 +70,20 @@ const HODNav = () => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <NavDropdown title="Profile" id="collasible-nav-dropdown">
-            <NavDropdown.Item>View profile</NavDropdown.Item>
+        <NavDropdown title="Profile" id="collasible-nav-dropdown">
             <NavDropdown.Item>
-              Update profile
+              <Link to="/">View profile</Link>
             </NavDropdown.Item>
-            <NavDropdown.Item>Attendance</NavDropdown.Item>
-            <NavDropdown.Item >
-              Reset password
+            <NavDropdown.Item>
+              <Link style={{ textDecoration: "none" }} to="/attendance">
+                Attendance
+              </Link>
             </NavDropdown.Item>
-    
+            <NavDropdown.Item>
+              <Link style={{ textDecoration: "none" }} to="/resetPassword">
+                Reset password
+              </Link>
+            </NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Staff" id="collasible-nav-dropdown">
             <NavDropdown.Item 

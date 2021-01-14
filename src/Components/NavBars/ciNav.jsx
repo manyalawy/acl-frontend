@@ -2,6 +2,7 @@ import React from "react";
 import { Nav, Navbar, NavDropdown, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useHistory } from 'react-router'
+import {Link} from "react-router-dom";
 
 const CINav = () => {
   const history = useHistory()
@@ -69,15 +70,24 @@ const slotLinkingReq = () =>{
         <Nav className="mr-auto">
 
         <NavDropdown title="Profile" id="collasible-nav-dropdown">
-            <NavDropdown.Item >View Profile</NavDropdown.Item>
-            <NavDropdown.Item >
-              Update Profile
-            </NavDropdown.Item>
-            <NavDropdown.Item>Attendance</NavDropdown.Item>
             <NavDropdown.Item>
-              Reset password
+              <Link to="/">View profile</Link>
             </NavDropdown.Item>
-    
+            <NavDropdown.Item>
+              <Link style={{ textDecoration: "none" }} to="/attendance">
+                Attendance
+              </Link>
+            </NavDropdown.Item>
+            <NavDropdown.Item>
+              <Link style={{ textDecoration: "none" }} to="/resetPassword">
+                Reset password
+              </Link>
+            </NavDropdown.Item>
+          </NavDropdown>
+          <NavDropdown title="Staff" id="collasible-nav-dropdown">
+            <NavDropdown.Item 
+            onClick={viewAllStaffPerCourse}>View All Staff</NavDropdown.Item>
+            
           </NavDropdown>
           <NavDropdown title="Requests" id="collasible-nav-dropdown">
             <NavDropdown.Item 
@@ -137,11 +147,7 @@ const slotLinkingReq = () =>{
               View Rejected Requests
             </NavDropdown.Item>
           </NavDropdown>
-           <NavDropdown title="Staff" id="collasible-nav-dropdown">
-            <NavDropdown.Item 
-            onClick={viewAllStaffPerCourse}>View All Staff</NavDropdown.Item>
-            
-          </NavDropdown>
+           
            <Nav.Link 
            onClick={ViewCov}>View Courses Coverage</Nav.Link>
            <Nav.Link 

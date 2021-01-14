@@ -100,7 +100,7 @@ const ViewMyProfile = () => {
   };
   const classes = useStyles();
   return (
-    <div>
+    <div style={{overflowY:'hidden', overflowX:'hidden'}}>
       <Box m={0}>
         <Grid
           container
