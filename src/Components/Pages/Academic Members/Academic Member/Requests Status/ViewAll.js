@@ -32,10 +32,9 @@ export default function ViewAll() {
 
   return (
     <div>
-      <h>
-        dummy data
-      </h>
+  
       <Nav />
+      dummy data
       <div style={{ marginTop: "2vw" }}>
         <h
           style={{ fontWeight: "bold", marginLeft: "40vw", fontSize: "1.5vw" }}
