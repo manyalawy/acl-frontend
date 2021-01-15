@@ -16,6 +16,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
+import Nav from "../../../NavBars/Nav";
 const token = localStorage.getItem("user");
 let rows = [];
 
@@ -109,6 +110,7 @@ const ViewAttendance = () => {
 
   return (
     <div>
+      <Nav />
       <Box>
         <Box m={5}>
           <h1>Attendance</h1>

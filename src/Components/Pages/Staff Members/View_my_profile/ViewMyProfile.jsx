@@ -4,6 +4,7 @@ import Modal from "./UpdateProfileModal";
 import profilePic from "./Assets/profiePic.png";
 import React, { useState, useEffect } from "react";
 import jwt_decoded from "jwt-decode";
+import Nav from "../../../NavBars/Nav";
 const axios = require("axios").default;
 
 const useStyles = makeStyles((theme) => ({
@@ -25,10 +26,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "#ff0f0f",
     },
   },
-
 }));
-
-
 
 const ViewMyProfile = () => {
   const token = localStorage.getItem("user");
@@ -77,16 +75,13 @@ const ViewMyProfile = () => {
         if (response.data.error) {
           alert(response.data.error);
         } else {
-
           alert(response.data);
-
         }
       })
       .catch((error) => {
         alert(error.message);
       });
   };
-
 
   const handleSignout = () => {
     axios
@@ -106,7 +101,8 @@ const ViewMyProfile = () => {
   };
   const classes = useStyles();
   return (
-    <div style={{overflowY:'hidden', overflowX:'hidden'}}>
+    <div style={{ overflowY: "hidden", overflowX: "hidden" }}>
+      <Nav />
       <Box m={0}>
         <Grid
           container
@@ -186,6 +182,5 @@ const ViewMyProfile = () => {
     </div>
   );
 };
-
 
 export default ViewMyProfile;

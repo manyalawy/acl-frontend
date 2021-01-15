@@ -4,12 +4,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 
-const CCNav = () => {
+const AcademicMemberNav = (props) => {
   const history = useHistory();
   const logout = () => {
     localStorage.removeItem("user");
     history.push("/login");
   };
+
   const compensationLeave = () => {
     history.push("/compensationLeave");
   };
@@ -72,14 +73,6 @@ const CCNav = () => {
 
   const viewSchedule = () => {
     history.push("/viewSchedule");
-  };
-
-  const courseSlots = () => {
-    history.push("/courseSlots");
-  };
-
-  const slotLinkingRequest = () => {
-    history.push("/slotLinkingRequests");
   };
 
   return (
@@ -151,8 +144,7 @@ const CCNav = () => {
               Maternity Leave
             </NavDropdown.Item>
           </NavDropdown>
-          <Nav.Link onClick={courseSlots}>Course Slots</Nav.Link>
-          <Nav.Link onClick={slotLinkingRequest}>Slot Linking Request</Nav.Link>
+
           <Nav.Link onClick={viewSchedule}> View schedule</Nav.Link>
         </Nav>
         <Nav>
@@ -166,4 +158,4 @@ const CCNav = () => {
     </Navbar>
   );
 };
-export default CCNav;
+export default AcademicMemberNav;

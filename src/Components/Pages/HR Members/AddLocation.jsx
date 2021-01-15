@@ -11,13 +11,13 @@ import {
   StyleSheet,
   ButtonGroup,
 } from "react-bootstrap";
+import Nav from "../../NavBars/Nav";
 
 const axios = require("axios").default;
 
-const token = localStorage.getItem("user");
-
-const decoded = jwt_decoded(token);
 const AddLocation = () => {
+  const token = localStorage.getItem("user");
+  const decoded = jwt_decoded(token);
   const [name, setname] = useState("");
   const [loc_type, settype] = useState("Lab");
   const [max_capacity, setMax] = useState("");
@@ -45,6 +45,7 @@ const AddLocation = () => {
   };
   return (
     <div>
+      <Nav />
       <Container>
         <Form>
           <Form.Group>

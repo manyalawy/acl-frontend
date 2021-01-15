@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Box, Link } from "@material-ui/core";
+import Nav from "../../../NavBars/Nav";
 
 export const SlotLinkingRequests = () => {
   const [Requests, setRequests] = useState([]);
@@ -21,6 +22,7 @@ export const SlotLinkingRequests = () => {
   };
   return (
     <div>
+      <Nav />
       <Box m={5}>
         <Box>
           <h1>Slot linking requests(dummy data)</h1>

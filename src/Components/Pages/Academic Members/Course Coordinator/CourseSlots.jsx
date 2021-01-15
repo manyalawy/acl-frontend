@@ -8,6 +8,7 @@ import {
   MenuItem,
 } from "@material-ui/core";
 import CourseSoltsModal from "./CourseSoltsModal";
+import Nav from "../../../NavBars/Nav";
 
 const axios = require("axios").default;
 const token = localStorage.getItem("user");
@@ -69,6 +70,7 @@ export const CourseSlots = () => {
   };
   return (
     <div>
+      <Nav />
       <Box m={5}>
         <Box>
           <h1>Course slots</h1>

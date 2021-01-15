@@ -4,9 +4,8 @@ import TextField from "@material-ui/core/TextField";
 import Box from "@material-ui/core/Box";
 import axios from "axios";
 import { Button } from "@material-ui/core";
+import Nav from "../../../NavBars/Nav";
 const token = localStorage.getItem("user");
-
-
 
 const useStyles = makeStyles((theme) => ({
   textarea: {
@@ -61,6 +60,7 @@ const ResetPassword = () => {
   };
   return (
     <div>
+      <Nav />
       <Box
         mt={20}
         display="flex"

@@ -10,17 +10,16 @@ import {
   StyleSheet,
   ButtonGroup,
 } from "react-bootstrap";
+import Nav from "../../NavBars/Nav";
 
 const axios = require("axios").default;
-
-const token = localStorage.getItem("user");
-const decoded = jwt_decoded(token);
 
 const DeleteLocation = () => {
   const [name, setname] = useState("");
   const [snackbarMsg, setsnackbarMsg] = useState("");
   const [openModal, setOpenModal] = React.useState(false);
-
+  const token = localStorage.getItem("user");
+  const decoded = jwt_decoded(token);
   const handle_Delete = () => {
     axios
       .post(
@@ -40,6 +39,7 @@ const DeleteLocation = () => {
   };
   return (
     <div>
+      <Nav />
       <Container>
         <Form>
           <Form.Group>

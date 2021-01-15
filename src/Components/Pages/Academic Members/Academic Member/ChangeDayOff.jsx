@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import {
   Box,
   Select,
-  InputLabel, 
+  InputLabel,
   MenuItem,
   TextField,
   Button,
 } from "@material-ui/core";
+import Nav from "../../../NavBars/Nav";
 const axios = require("axios").default;
 const SendDayOffRequest = () => {
   const token = localStorage.getItem("user");
@@ -34,6 +35,7 @@ const SendDayOffRequest = () => {
   };
   return (
     <div>
+      <Nav />
       <Box m={5}>
         <h1>Change day off request</h1>
       </Box>

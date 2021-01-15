@@ -12,6 +12,7 @@ import {
   StyleSheet,
   ButtonGroup,
 } from "react-bootstrap";
+import Nav from "../../NavBars/Nav";
 const axios = require("axios").default;
 const DeleteFaculty = () => {
   const [name, setname] = useState("");
@@ -37,6 +38,7 @@ const DeleteFaculty = () => {
   };
   return (
     <div>
+      <Nav />
       <Container>
         <Form>
           <Form.Group>

@@ -10,6 +10,7 @@ import {
   StyleSheet,
   ButtonGroup,
 } from "react-bootstrap";
+import Nav from "../../NavBars/Nav";
 
 const axios = require("axios").default;
 const UpdateDepartment = () => {
@@ -53,6 +54,7 @@ const UpdateDepartment = () => {
 
   return (
     <div>
+      <Nav />
       <Container>
         <Form>
           <Form.Group>

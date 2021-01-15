@@ -10,11 +10,10 @@ import {
   StyleSheet,
   ButtonGroup,
 } from "react-bootstrap";
+import Nav from "../../NavBars/Nav";
 
 const axios = require("axios").default;
 
-const token = localStorage.getItem("user");
-const decoded = jwt_decoded(token);
 const AddUser = () => {
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
@@ -23,7 +22,8 @@ const AddUser = () => {
   const [salary, setsalary] = useState("");
   const [day_off, setdayoff] = useState("");
   const [location_name, setlocation] = useState("");
-
+  const token = localStorage.getItem("user");
+  const decoded = jwt_decoded(token);
   const handle_add = () => {
     axios
       .post(
@@ -54,6 +54,7 @@ const AddUser = () => {
   };
   return (
     <div>
+      <Nav />
       <Container>
         <Form>
           <Form.Group>

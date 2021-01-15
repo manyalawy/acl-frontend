@@ -12,8 +12,6 @@ import {
   ButtonGroup,
 } from "react-bootstrap";
 const axios = require("axios").default;
-const token = localStorage.getItem("user");
-const decoded = jwt_decoded(token);
 
 const AddLocation = () => {
   const [name, setname] = useState("");
@@ -23,7 +21,8 @@ const AddLocation = () => {
   const [snackbarMsg, setsnackbarMsg] = useState("");
   const [open, setOpen] = useState(false);
   const [show, setShow] = useState(true);
-
+  const token = localStorage.getItem("user");
+  const decoded = jwt_decoded(token);
   const [openModal, setOpenModal] = React.useState(false);
   const handle_add = () => {
     axios

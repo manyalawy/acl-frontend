@@ -10,14 +10,14 @@ import {
   StyleSheet,
   ButtonGroup,
 } from "react-bootstrap";
+import Nav from "../../NavBars/Nav";
 
 const axios = require("axios").default;
 
-const token = localStorage.getItem("user");
-const decoded = jwt_decoded(token);
 const DeleteCourse = () => {
   const [name, setname] = useState("");
-
+  const token = localStorage.getItem("user");
+  const decoded = jwt_decoded(token);
   const handle_delete = () => {
     axios
       .post(
@@ -37,6 +37,7 @@ const DeleteCourse = () => {
   };
   return (
     <div>
+      <Nav />
       <Container>
         <Form>
           <Form.Group>

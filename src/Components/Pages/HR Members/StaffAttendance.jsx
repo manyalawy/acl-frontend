@@ -17,6 +17,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import { withRouter } from "react-router-dom";
+import Nav from "../../NavBars/Nav";
 
 const token = localStorage.getItem("user");
 let rows = [];
@@ -112,6 +113,7 @@ const StaffAttendance = () => {
 
   return (
     <div>
+      <Nav />
       <Box>
         <Box m={5}>
           <h1>Attendance</h1>

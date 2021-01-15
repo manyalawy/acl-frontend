@@ -10,7 +10,6 @@ import { useHistory } from "react-router-dom";
 import isAuth from "../../../../Services/isAuth";
 import { Redirect } from "react-router-dom";
 
-
 import guc_logo from "./Assets/guc_logo.png";
 const axios = require("axios").default;
 function Alert(props) {
@@ -44,6 +43,7 @@ const Login = () => {
     if (email.length === 0 || password.length === 0) {
       setsnackbarMsg("Email and password are required");
       setOpen(true);
+
       return;
     }
 

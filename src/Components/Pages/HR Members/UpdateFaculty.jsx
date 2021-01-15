@@ -13,14 +13,15 @@ import {
   StyleSheet,
   ButtonGroup,
 } from "react-bootstrap";
+import Nav from "../../NavBars/Nav";
 
 const axios = require("axios").default;
 
-const token = localStorage.getItem("user");
-const decoded = jwt_decoded(token);
 const UpdateFaculty = () => {
   const [name, setname] = useState("");
   const [newname, setnew] = useState("");
+  const token = localStorage.getItem("user");
+  const decoded = jwt_decoded(token);
   const handle_update = () => {
     axios
       .post(
@@ -41,6 +42,7 @@ const UpdateFaculty = () => {
   };
   return (
     <div>
+      <Nav />
       <Container>
         <Form>
           <Form.Group>

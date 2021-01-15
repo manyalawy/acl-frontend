@@ -10,6 +10,7 @@ import {
   StyleSheet,
   ButtonGroup,
 } from "react-bootstrap";
+import Nav from "../../NavBars/Nav";
 
 const AddCourse = () => {
   const [name, setname] = useState("");
@@ -41,6 +42,7 @@ const AddCourse = () => {
 
   return (
     <div>
+      <Nav />
       <Container>
         <Form>
           <Form.Group>

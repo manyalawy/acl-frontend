@@ -10,15 +10,16 @@ import {
   StyleSheet,
   ButtonGroup,
 } from "react-bootstrap";
+import Nav from "../../NavBars/Nav";
 
 const axios = require("axios").default;
-const token = localStorage.getItem("user");
-const decoded = jwt_decoded(token);
 
 const Add_department = () => {
   const [name, setname] = useState("");
   const [facultyy, setfacultyy] = useState("");
   const [hod, sethod] = useState("");
+  const token = localStorage.getItem("user");
+  const decoded = jwt_decoded(token);
   const handle_add = () => {
     axios
       .post(
@@ -41,6 +42,7 @@ const Add_department = () => {
 
   return (
     <Container>
+      <Nav />
       <Form>
         <Form.Group>
           <Form.Label>Department Name</Form.Label>

@@ -10,8 +10,7 @@ import {
   StyleSheet,
   ButtonGroup,
 } from "react-bootstrap";
-const token = localStorage.getItem("user");
-const decoded = jwt_decoded(token);
+import Nav from "../../NavBars/Nav";
 
 const axios = require("axios").default;
 const UpdateCourse = () => {
@@ -19,6 +18,8 @@ const UpdateCourse = () => {
   const [newname, setnew] = useState("");
   const [department_name, setdep] = useState("");
   const [course_coordinator, setcc] = useState("");
+  const token = localStorage.getItem("user");
+  const decoded = jwt_decoded(token);
   const data = {};
   if (name.length != 0) {
     data.name = name;
@@ -58,6 +59,7 @@ const UpdateCourse = () => {
 
   return (
     <div>
+      <Nav />
       <Container>
         <Form>
           <Form.Group>

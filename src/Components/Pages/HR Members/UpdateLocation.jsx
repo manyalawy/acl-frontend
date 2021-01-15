@@ -9,17 +9,17 @@ import {
   Dropdown,
   StyleSheet,
   ButtonGroup,
+  Nav,
 } from "react-bootstrap";
 
 const axios = require("axios").default;
-const token = localStorage.getItem("user");
-const decoded = jwt_decoded(token);
 
 const UpdateLocation = () => {
   const [name, setname] = useState("");
   const [newname, setnew] = useState("");
   const [loc_type, settype] = useState("");
-
+  const token = localStorage.getItem("user");
+  const decoded = jwt_decoded(token);
   const handle_update = () => {
     axios
       .post(
@@ -41,6 +41,7 @@ const UpdateLocation = () => {
   };
   return (
     <div>
+      <Nav />
       <Container>
         <Form>
           <Form.Group>
