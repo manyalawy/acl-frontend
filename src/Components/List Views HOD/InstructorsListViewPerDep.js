@@ -19,7 +19,8 @@ export default function InstructorsListViewPerDep() {
     })
       .then((res) => {
         console.log(res);
-        setInstructors(res);
+        setInstructors(res.data);
+        console.log(instructors)
       })
       .catch((error) => {
         console.log(error);
@@ -48,7 +49,8 @@ export default function InstructorsListViewPerDep() {
             marginBottom: "3vw",
           }}
         >
-          {instructors1.map((element, index) => {
+          {console.log(instructors)}
+          {instructors.map((element, index) => {
             return (
               <table style={{ marginTop: "1vw" }}>
                 <tr>

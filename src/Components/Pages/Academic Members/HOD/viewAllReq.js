@@ -5,7 +5,7 @@ import { useHistory } from "react-router";
 import Nav from "../../../NavBars/Nav";
 
 export default function ViewAllReq() {
-  const [requests, setRequests] = useState("");
+  const [requests, setRequests] = useState([]);
   const history = useHistory();
   const requests1 = ["Sick Leave", "Maternity Leave"];
   const token = localStorage.getItem("user");
@@ -25,7 +25,7 @@ export default function ViewAllReq() {
     })
       .then((res) => {
         console.log(res);
-        setRequests(res);
+        setRequests(res.data);
       })
       .catch((error) => {
         console.log(error);
@@ -50,7 +50,7 @@ export default function ViewAllReq() {
             marginBottom: "3vw",
           }}
         >
-          {requests1.map((element, index) => {
+          {requests.map((element, index) => {
             return (
               <table style={{ marginTop: "1vw" }}>
                 <tr>

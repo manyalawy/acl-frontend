@@ -23,7 +23,7 @@ export default function ViewAll() {
     })
       .then((res) => {
         console.log(res);
-        setRequests(res);
+        setRequests(res.data);
       })
       .catch((error) => {
         console.log(error);
@@ -32,6 +32,9 @@ export default function ViewAll() {
 
   return (
     <div>
+      <h>
+        dummy data
+      </h>
       <Nav />
       <div style={{ marginTop: "2vw" }}>
         <h

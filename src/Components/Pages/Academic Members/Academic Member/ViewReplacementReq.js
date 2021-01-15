@@ -141,7 +141,7 @@ export default function ViewReplacementReq() {
                             }}
                           >
                             {" "}
-                            {requests.sender_id}{" "}
+                            {requests1.sender_id}{" "}
                           </text>
                         </td>
                       </tr>
@@ -168,7 +168,7 @@ export default function ViewReplacementReq() {
                             }}
                           >
                             {" "}
-                            {requests.type}{" "}
+                            {requests1.type}{" "}
                           </text>
                         </td>
                       </tr>
@@ -195,7 +195,7 @@ export default function ViewReplacementReq() {
                             }}
                           >
                             {" "}
-                            {requests.date_to_be_requested}{" "}
+                            {requests1.date_to_be_requested}{" "}
                           </text>
                         </td>
                       </tr>

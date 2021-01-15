@@ -81,7 +81,7 @@ export default function CoursesListView() {
                           &nbsp; &nbsp; &nbsp;
                           <text style={{ fontSize: "1vw", color: "#8b0000 " }}>
                             {" "}
-                            {courses[index]}{" "}
+                            {course1[index]}{" "}
                           </text>{" "}
                         </td>
                       </tr>

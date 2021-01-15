@@ -3,7 +3,7 @@ import axios from "axios";
 import Card from "react-bootstrap/Card";
 import Nav from "../../../NavBars/Nav";
 export default function ViewDayOffAll() {
-  const [dayOffAll, setDayOffAll] = useState("");
+  const [dayOffAll, setDayOffAll] = useState([]);
   const dayOffAll1 = [
     [" ac-2 ", "  Sunday"],
 
@@ -28,7 +28,7 @@ export default function ViewDayOffAll() {
     })
       .then((res) => {
         console.log(res);
-        setDayOffAll(res);
+        setDayOffAll(res.data);
       })
       .catch((error) => {
         console.log(error);
@@ -53,7 +53,7 @@ export default function ViewDayOffAll() {
             marginBottom: "3vw",
           }}
         >
-          {dayOffAll1.map((element, index) => {
+          {dayOffAll.map((element, index) => {
             return (
               <table style={{ marginTop: "1vw" }}>
                 <tr>
